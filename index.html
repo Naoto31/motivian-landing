@@ -28,8 +28,10 @@ body{margin:0;background:#FDF3EB}
 *{box-sizing:border-box}
 a{color:#E85D20;text-decoration:none}a:hover{color:#D04F15}
 </style>
-<style>html{scroll-behavior:smooth}section[id]{scroll-margin-top:80px}.btn-primary{transition:background .15s}.btn-primary:hover{background:#D04F15 !important;color:#FFFFFF !important}@media (max-width: 1000px){.mock{zoom:0.6 !important}.g4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+<style>html{scroll-behavior:smooth}section[id]{scroll-margin-top:80px}.btn-primary{transition:background .15s}.btn-primary:hover{background:#D04F15 !important;color:#FFFFFF !important}@media (max-width: 1000px){.hide-t{display:none !important}.mock{zoom:0.6 !important}.fbox{zoom:0.72}.g4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
 @media (max-width: 720px){
+.fb,.fbox .g3{min-width:0 !important}.fb{grid-template-columns:1fr !important}
+.fbox{zoom:1 !important;padding:14px !important}
 h1{font-size:50px !important}
 h2{font-size:34px !important}
 section{padding-left:20px !important;padding-right:20px !important}
@@ -57,9 +59,10 @@ section{padding-left:20px !important;padding-right:20px !important}
 <header style="position: sticky; top: 0; z-index: 10; background: rgba(253,243,235,0.92); border-bottom: 1px solid #EDE3D6; backdrop-filter: blur(8px);">
   <nav class="nav" style="max-width: 1200px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <a href="#top" style="font-size: 26px; font-weight: 800; letter-spacing: -0.02em; color: #E85D20;">Motivian</a>
-    <div class="hide-m" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap; font-size: 15px; font-weight: 500;">
+    <div class="hide-t" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap; font-size: 15px; font-weight: 500;">
       <a href="#why" style="color: #372C22;">Why</a>
       <a href="#today" style="color: #372C22;">Today</a>
+      <a href="#flow" style="color: #372C22;">Plan</a>
       <a href="#map" style="color: #372C22;">What matters</a>
       <a href="#moments" style="color: #372C22;">Moments</a>
       <a href="#faq" style="color: #372C22;">FAQ</a>
@@ -168,7 +171,7 @@ section{padding-left:20px !important;padding-right:20px !important}
   <div style="max-width: 680px; margin: 0 auto 72px; text-align: center;">
     <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #E85D20; margin-bottom: 14px;">TODAY, ON PURPOSE</div>
     <h2 style="margin: 0 0 18px; font-size: 46px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em;">One day. Three small moments.</h2>
-    <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #6B6560;">Not another system to maintain. A moment to slow down, three times a day.</p>
+    <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #6B6560;">A light rhythm for every day — three small moments to slow down.</p>
   </div>
   <div style="position: relative;">
     <div class="hide-m" style="position: absolute; left: 16.6%; right: 16.6%; top: 27px; height: 2px; background: #F2C9B5;"></div>
@@ -361,6 +364,99 @@ section{padding-left:20px !important;padding-right:20px !important}
   <p style="margin: 14px 0 0; text-align: center; font-size: 13px; color: #6B6560;">Shown with demo data.</p>
 </section>
 
+<!-- ============ FLOW ============ -->
+<section id="flow" style="background: #F6EEE5;">
+  <div class="pad" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 56px;">
+      <div style="max-width: 600px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #E85D20; margin-bottom: 14px;">FLOW</div>
+        <h2 style="margin: 0; font-size: 46px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em;">Intentional — and still<br class="hide-m"> on top of things.</h2>
+      </div>
+      <p style="margin: 0; max-width: 440px; font-size: 18px; line-height: 1.6; color: #6B6560;">Real life still comes with errands, deadlines and SIM cards to swap. Motivian handles your to-dos properly — so they don't crowd out what matters.</p>
+    </div>
+
+    <div class="fbox" style="background: #FFFCF7; border: 1px solid #EDE3D6; border-radius: 28px; padding: 24px; box-shadow: 0 40px 80px -50px rgba(91,52,25,0.35); overflow-x: auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 0.7fr 1.15fr 1fr 1fr; gap: 14px; min-width: 900px;" class="fb">
+        <div style="background: #FFFFFF; border: 1px solid #EDE3D6; border-radius: 18px; padding: 18px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;"><span style="font-size: 16px; font-weight: 700;">To Plan</span><span style="font-size: 12px; font-weight: 600; background: #F5E6DA; padding: 3px 10px; border-radius: 99px;">24</span></div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14px;">
+            <div style="display: flex; gap: 10px; align-items: center;"><span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #D9CFC4;"></span><span style="flex: 1;">Return the sandals</span></div>
+            <div style="display: flex; gap: 10px; align-items: center;"><span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #D9CFC4;"></span><span style="flex: 1;">Try a tofu steak</span><span style="font-size: 10px; color: #52703C; background: #E9EEE2; padding: 2px 7px; border-radius: 99px;">Home</span></div>
+            <div style="display: flex; gap: 10px; align-items: center;"><span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #D9CFC4;"></span><span style="flex: 1;">Book trail run</span><span style="font-size: 10px; color: #2F6B5C; background: #E3EDE9; padding: 2px 7px; border-radius: 99px;">Travel</span></div>
+            <div style="display: flex; gap: 10px; align-items: center;"><span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #D9CFC4;"></span><span style="flex: 1;">Nutrition book, ch. 2</span><span style="font-size: 10px; color: #46617E; background: #E6EBF1; padding: 2px 7px; border-radius: 99px;">Growth</span></div>
+          </div>
+        </div>
+        <div class="hide-m" style="background: #FDF3EB; border-radius: 18px; padding: 18px;">
+          <div style="font-size: 16px; font-weight: 700; color: #6B6560;">Mon</div><div style="font-size: 12px; color: #6B6560; margin-bottom: 14px;">Oct 5</div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14px;">
+            <div style="display: flex; gap: 10px; align-items: center;"><span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #D9CFC4;"></span>Check the build</div>
+          </div>
+        </div>
+        <div class="hide-m" style="background: #FDF3EB; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 6px; color: #6B6560;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7E9A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12l3 3 5-6"></path></svg>
+          <div style="font-size: 15px; font-weight: 700;">Tue done</div><div style="font-size: 12px;">12 steps</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1.5px solid #E7A07C; border-radius: 18px; padding: 18px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 16px; font-weight: 700;">Wed</span><span style="font-size: 11px; font-weight: 700; color: #FFFFFF; background: #E85D20; padding: 3px 10px; border-radius: 99px;">Today</span></div>
+          <div style="font-size: 12px; color: #6B6560; margin-bottom: 14px;">Oct 7</div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14px;">
+            <div style="display: flex; gap: 10px; align-items: center;"><span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #D9CFC4;"></span>Long walk after lunch</div>
+            <div style="display: flex; gap: 10px; align-items: center;"><span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #D9CFC4;"></span>Read one chapter</div>
+            <div style="font-size: 12px; font-style: italic; color: #6B6560; text-align: center;">3 completed hidden</div>
+          </div>
+        </div>
+        <div class="hide-m" style="background: #FDF3EB; border-radius: 18px; padding: 18px;">
+          <div style="font-size: 16px; font-weight: 700;">Thu</div><div style="font-size: 12px; color: #6B6560; margin-bottom: 14px;">Oct 8</div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14px;">
+            <div style="display: flex; gap: 10px; align-items: center;"><span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #D9CFC4;"></span>Swap SIM card</div>
+            <div style="display: flex; gap: 10px; align-items: center;"><span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #D9CFC4;"></span>Community meetup</div>
+          </div>
+        </div>
+        <div class="hide-m" style="background: #FDF3EB; border-radius: 18px; padding: 18px;">
+          <div style="font-size: 16px; font-weight: 700;">Fri</div><div style="font-size: 12px; color: #6B6560; margin-bottom: 14px;">Oct 9</div>
+          <div style="border: 1.5px dashed #EDDDC7; border-radius: 12px; padding: 10px; font-size: 13px; color: #6B6560; text-align: center;">+ Add step</div>
+        </div>
+      </div>
+
+      <div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 14px; min-width: 900px;">
+        <div style="background: #FFFFFF; border: 1px solid #EDE3D6; border-radius: 18px; padding: 20px;">
+          <div style="font-size: 14px; font-weight: 700; margin-bottom: 10px;">This week</div>
+          <div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-size: 36px; font-weight: 800;">19</span><span style="font-size: 14px; color: #6B6560;">/ 31 done</span></div>
+          <div style="height: 6px; background: #F5E6DA; border-radius: 99px; margin-top: 10px;"><div style="width: 61%; height: 100%; background: #E85D20; border-radius: 99px;"></div></div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #EDE3D6; border-radius: 18px; padding: 20px;">
+          <div style="font-size: 14px; font-weight: 700; margin-bottom: 10px;">Balance across the week</div>
+          <div style="display: flex; align-items: flex-end; gap: 12px; height: 60px;">
+            <span style="flex: 1; height: 15%; background: #F5E6DA; border-radius: 6px;"></span><span style="flex: 1; height: 100%; background: #E8BCA6; border-radius: 6px;"></span><span style="flex: 1; height: 60%; background: #E85D20; border-radius: 6px;"></span><span style="flex: 1; height: 30%; background: #F5E6DA; border-radius: 6px;"></span><span style="flex: 1; height: 10%; background: #F5E6DA; border-radius: 6px;"></span><span style="flex: 1; height: 8%; background: #F5E6DA; border-radius: 6px;"></span><span style="flex: 1; height: 8%; background: #F5E6DA; border-radius: 6px;"></span>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #EDE3D6; border-radius: 18px; padding: 20px;">
+          <div style="font-size: 14px; font-weight: 700; margin-bottom: 12px;">Steps by place</div>
+          <div style="display: flex; height: 14px; border-radius: 99px; overflow: hidden; margin-bottom: 12px;"><span style="width: 38%; background: #E85D20;"></span><span style="width: 24%; background: #7E4D72;"></span><span style="width: 20%; background: #2F6B5C;"></span><span style="width: 18%; background: #46617E;"></span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: #6B6560;"><span>Craft</span><span>Family</span><span>Travel</span><span>Growth</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 48px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="width: 40px; height: 40px; border-radius: 12px; background: #FFFCF7; border: 1px solid #EDE3D6; color: #E85D20; display: inline-flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13h4l2 3h4l2-3h4"></path><path d="M5 13l2-7h10l2 7v5H5z"></path></svg></span>
+        <div style="font-size: 18px; font-weight: 700;">Capture now, plan later</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6B6560;">Everything goes into To Plan the moment it comes up. Tag it with a Place, or leave it loose.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="width: 40px; height: 40px; border-radius: 12px; background: #FFFCF7; border: 1px solid #EDE3D6; color: #E85D20; display: inline-flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></span>
+        <div style="font-size: 18px; font-weight: 700;">Plan the week, not just the day</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6B6560;">Drag to-dos into the days ahead. Today stays focused; the rest of the week is ready when you are.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="width: 40px; height: 40px; border-radius: 12px; background: #FFFCF7; border: 1px solid #EDE3D6; color: #E85D20; display: inline-flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></span>
+        <div style="font-size: 18px; font-weight: 700;">See where your time goes</div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6B6560;">Weekly progress, balance across the days, and steps by Place — a gentle check, not a scoreboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ LIFE MAP ============ -->
 <section class="sec" id="map" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
   <div style="flex: 1 1 460px; min-width: 0; display: flex; justify-content: center;">
@@ -493,8 +589,8 @@ section{padding-left:20px !important;padding-right:20px !important}
   <h2 style="margin: 0 0 40px; font-size: 46px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; text-align: center;">Questions</h2>
   <div style="display: flex; flex-direction: column; border-top: 1px solid #EDE3D6;">
     <details style="border-bottom: 1px solid #EDE3D6;">
-      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 18px; font-weight: 700; min-height: 44px;">Is Motivian a to-do app?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none;"><path d="M12 5v14M5 12h14"></path></svg></summary>
-      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 1.7; color: #6B6560; max-width: 680px;">Not really. There are steps to tick off, but Motivian isn't about doing more. It's a space to start each day with intention, take small steps toward what matters, and look back on what you've lived and learned.</p>
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 18px; font-weight: 700; min-height: 44px;">Can I manage my to-dos in Motivian?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none;"><path d="M12 5v14M5 12h14"></path></svg></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 1.7; color: #6B6560; max-width: 680px;">Yes. Capture tasks in To Plan, drag them into your week and tick them off as steps. The difference is that each step can point back to what it's for — so the to-do list never drowns out what matters.</p>
     </details>
     <details style="border-bottom: 1px solid #EDE3D6;">
       <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 18px; font-weight: 700; min-height: 44px;">Does Motivian use AI?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none;"><path d="M12 5v14M5 12h14"></path></svg></summary>
