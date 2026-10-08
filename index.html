@@ -126,7 +126,7 @@ a{color:#E85D20;text-decoration:none}a:hover{color:#D04F15}
     <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #6B6560;">An echo from the past on the left, today in the middle, and the places it all leads to on the right.</p>
   </div>
 
-  <div style="overflow-x: auto; border-radius: 22px;">
+  <div id="tilt" style="overflow-x: auto; border-radius: 22px;">
   <div role="img" aria-label="The Motivian Home screen, shown with demo data: Today's Echo, today's intention with steps and journal, and the places that give the day its direction." style="min-width: 1100px; background: #FBF2E6; border: 1px solid #F0E3D2; border-radius: 22px; overflow: hidden; box-shadow: 0 50px 100px -50px rgba(90,50,20,0.35); font-size: 13px; color: #372C22;">
 
     <!-- browser chrome -->
@@ -547,5 +547,47 @@ a{color:#E85D20;text-decoration:none}a:hover{color:#D04F15}
 </footer>
 
 </div>
+<script>
+(() => {
+  const el = document.getElementById('tilt');
+  if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const EASE = 'cubic-bezier(0.03, 0.98, 0.52, 0.99)';
+  const FLAT = 'perspective(1400px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+  let ready = !('IntersectionObserver' in window);
+  el.style.willChange = 'transform';
+  el.style.transition = 'transform 400ms ' + EASE;
+  el.style.transform = FLAT;
+
+  // Entrance: lies back in perspective, stands up when scrolled into view.
+  if (!ready) {
+    el.style.transformOrigin = '50% 100%';
+    el.style.transform = 'perspective(1400px) rotateX(18deg) scale3d(0.94, 0.94, 0.94)';
+    const io = new IntersectionObserver((entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      el.style.transition = 'transform 1200ms ' + EASE;
+      el.style.transform = FLAT;
+      setTimeout(() => {
+        el.style.transformOrigin = '50% 50%';
+        el.style.transition = 'transform 400ms ' + EASE;
+        ready = true;
+      }, 1200);
+    }, { threshold: 0.2 });
+    io.observe(el);
+  }
+
+  // Tilt toward the cursor (mouse/trackpad only).
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const MAX = 4; // degrees
+  el.addEventListener('mousemove', (e) => {
+    if (!ready) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `perspective(1400px) rotateX(${(-y * 2 * MAX).toFixed(2)}deg) rotateY(${(x * 2 * MAX).toFixed(2)}deg) scale3d(1.01, 1.01, 1.01)`;
+  });
+  el.addEventListener('mouseleave', () => { if (ready) el.style.transform = FLAT; });
+})();
+</script>
 </body>
 </html>
