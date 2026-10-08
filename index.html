@@ -5,12 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Motivian — Do what matters. Every day.</title>
 <meta name="description" content="In a world of infinite possibilities, Motivian keeps what truly matters to you in view — and helps you give it a piece of today.">
-<meta property="og:title" content="Motivian">
-<meta property="og:description" content="Do what matters. Every day.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://naoto31.github.io/motivian-landing/">
+<meta property="og:title" content="Motivian — Do what matters. Every day.">
+<meta property="og:image" content="https://naoto31.github.io/motivian-landing/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:description" content="In a world of infinite possibilities, keep what truly matters to you in view — and give it a piece of today.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E85D20'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='20' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Plus Jakarta Sans';font-style:italic;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-wght-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Plus Jakarta Sans';font-style:italic;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-ext-wght-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wl-input:focus{outline:2px solid #E85D20;outline-offset:2px}
+.faq summary{list-style:none;cursor:pointer}.faq summary::-webkit-details-marker{display:none}
+.faq summary .chev{transition:transform .2s}.faq details[open] summary .chev{transform:rotate(45deg)}
 body{margin:0;background:#FDF3EB}
 *{box-sizing:border-box}
 a{color:#E85D20;text-decoration:none}a:hover{color:#D04F15}
@@ -32,11 +45,13 @@ section{padding-left:20px !important;padding-right:20px !important}
 .cta-sec{padding-bottom:72px !important}
 .nav{padding:14px 20px !important}
 .closer{font-size:22px !important;margin-top:48px !important}
+.story-lead{font-size:21px !important}
+#story{padding-top:72px !important;padding-bottom:72px !important}
 }
 </style>
 </head>
 <body>
-<div style="font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif; color: #1A1614; background: #FDF3EB; width: 100%; min-height: 100vh;">
+<div style="font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #1A1614; background: #FDF3EB; width: 100%; min-height: 100vh;">
 
 <!-- ============ NAV ============ -->
 <header style="position: sticky; top: 0; z-index: 10; background: rgba(253,243,235,0.92); border-bottom: 1px solid #EDE3D6; backdrop-filter: blur(8px);">
@@ -47,10 +62,10 @@ section{padding-left:20px !important;padding-right:20px !important}
       <a href="#today" style="color: #372C22;">Today</a>
       <a href="#map" style="color: #372C22;">What matters</a>
       <a href="#moments" style="color: #372C22;">Moments</a>
+      <a href="#faq" style="color: #372C22;">FAQ</a>
     </div>
     <div style="display: flex; align-items: center; gap: 12px;">
-      <a href="#signin" style="font-size: 15px; font-weight: 600; color: #1A1614; padding: 12px 16px;">Sign in</a>
-      <a class="btn-primary" href="#start" style="font-size: 15px; font-weight: 700; color: #FFFFFF; background: #E85D20; padding: 12px 22px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center;">Start today</a>
+      <a class="btn-primary" href="#start" style="font-size: 15px; font-weight: 700; color: #FFFFFF; background: #E85D20; padding: 12px 22px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center;">Get early access</a>
     </div>
   </nav>
 </header>
@@ -61,20 +76,25 @@ section{padding-left:20px !important;padding-right:20px !important}
     <p style="margin: 0; font-size: 15px; font-style: italic; color: #6B6560;">Small steps every day lead to big changes.</p>
     <h1 style="margin: 0; font-size: 76px; line-height: 1.0; font-weight: 800; letter-spacing: -0.04em;">Do what matters.<br><span style="color: #E85D20;">Every day.</span></h1>
     <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #6B6560; max-width: 520px;">In a world of infinite possibilities, Motivian keeps what truly matters to you in view — and helps you give it a piece of today.</p>
-    <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
-      <a class="btn-primary" href="#start" style="font-size: 17px; font-weight: 700; color: #FFFFFF; background: #E85D20; padding: 16px 30px; border-radius: 999px; min-height: 52px; display: inline-flex; align-items: center;">Start today</a>
-      <a href="#today" style="font-size: 17px; font-weight: 600; color: #1A1614; padding: 16px 24px; border-radius: 999px; border: 1px solid #EDDDC7; background: #FFFCF7; min-height: 52px; display: inline-flex; align-items: center; gap: 8px;">See a day in Motivian
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-      </a>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <p style="margin: 0 0 6px; font-size: 15px; font-weight: 600; color: #372C22;">Motivian is in early access. Join the waitlist:</p>
+      <form class="waitlist" action="#" method="post" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px; justify-content: flex-start;">
+        <label for="hero-email" class="sr-only">Email address</label>
+        <input id="hero-email" class="wl-input" type="email" name="email" required autocomplete="email" placeholder="you@example.com" style="flex: 1 1 220px; min-width: 0; min-height: 52px; padding: 0 20px; font: inherit; font-size: 16px; color: #1A1614; background: #FFFFFF; border: 1px solid #EDDDC7; border-radius: 999px;">
+        <button class="btn-primary" type="submit" style="flex: none; min-height: 52px; padding: 0 26px; font: inherit; font-size: 16px; font-weight: 700; color: #FFFFFF; background: #E85D20; border: 0; border-radius: 999px; cursor: pointer;">Get early access</button>
+        <p class="wl-msg" role="status" aria-live="polite" style="flex-basis: 100%; margin: 4px 0 0; min-height: 22px; font-size: 14px; color: #6B6560;"></p>
+      </form>
     </div>
-    <p style="margin: 0; font-size: 14px; color: #6B6560;">[BETA / PRICING NOTE — e.g. free during beta]</p>
+    <a href="#today" style="align-self: flex-start; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: -12px;">See a day in Motivian
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
   </div>
 
   <div class="hero-visual" style="flex: 1 1 460px; min-width: 0; position: relative; padding: 0 0 56px;">
     <div style="background: #FFFFFF; border: 1px solid #EDE3D6; border-radius: 28px; padding: 32px 32px 28px; box-shadow: 0 40px 80px -40px rgba(90,50,20,0.35);">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #E85D20;">TODAY'S INTENTION</div>
-        <div style="font-size: 13px; color: #6B6560;">Thu, Oct 8</div>
+        <div data-today="long" style="font-size: 13px; color: #6B6560;"></div>
       </div>
       <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.02em; margin: 8px 0 22px;">Slow &amp; focused</div>
       <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
@@ -222,7 +242,7 @@ section{padding-left:20px !important;padding-right:20px !important}
           <div style="position: absolute; left: 16.6%; right: 50%; top: 6px; height: 2px; background: #F2C9B5;"></div>
           <div style="position: absolute; left: 50%; right: 16.6%; top: 6px; border-top: 2px dashed #F2C9B5;"></div>
           <div style="position: relative; text-align: center;"><span style="display: inline-block; width: 11px; height: 11px; border-radius: 99px; background: #F0B79A;"></span><div style="font-size: 15px; font-weight: 700; margin-top: 4px;">Echoes</div><div style="font-size: 11px; color: #756454;">memories &amp; moments</div></div>
-          <div style="position: relative; text-align: center;"><span style="display: inline-block; width: 15px; height: 15px; border-radius: 99px; background: #E85D20; box-shadow: 0 0 0 4px #F7DED1; margin-top: -2px;"></span><div style="font-size: 17px; font-weight: 800; color: #E85D20; margin-top: 2px;">Today</div><div style="font-size: 11px; color: #756454;">Thu, Oct 8</div></div>
+          <div style="position: relative; text-align: center;"><span style="display: inline-block; width: 15px; height: 15px; border-radius: 99px; background: #E85D20; box-shadow: 0 0 0 4px #F7DED1; margin-top: -2px;"></span><div style="font-size: 17px; font-weight: 800; color: #E85D20; margin-top: 2px;">Today</div><div data-today="short" style="font-size: 11px; color: #756454;">Thu, Oct 8</div></div>
           <div style="position: relative; text-align: center;"><span style="display: inline-block; width: 11px; height: 11px; border-radius: 99px; border: 2px solid #F0B79A; background: #FBF2E6; box-sizing: border-box;"></span><div style="font-size: 15px; font-weight: 700; margin-top: 4px;">Direction</div><div style="font-size: 11px; color: #756454;">why this matters</div></div>
         </div>
 
@@ -398,22 +418,22 @@ section{padding-left:20px !important;padding-right:20px !important}
       <div style="display: flex; gap: 22px; align-items: flex-start;">
         <div style="width: 44px; text-align: right;"><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #E85D20;">TODAY</div><div style="font-size: 26px; font-weight: 600; color: #E85D20;">7</div></div>
         <span style="margin-top: 14px; width: 14px; height: 14px; border-radius: 99px; background: #E85D20; flex: none;"></span>
-        <div style="flex: 1; font-size: 16px; line-height: 1.6;">Feels like it's coming together. Now I just keep putting energy in.<div style="font-size: 13px; color: #6B6560; margin-top: 6px;">Intention: Slow &amp; playful · 5 steps · 3 done</div></div>
+        <div style="flex: 1; font-size: 16px; line-height: 1.6;">Slow start, but the afternoon finally clicked.<div style="font-size: 13px; color: #6B6560; margin-top: 6px;">Intention: Slow &amp; focused · 4 steps · 2 done</div></div>
       </div>
       <div style="display: flex; gap: 22px; align-items: flex-start;">
         <div style="width: 44px; text-align: right;"><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #6B6560;">TUE</div><div style="font-size: 26px; font-weight: 600;">6</div></div>
         <span style="margin-top: 14px; width: 14px; height: 14px; border-radius: 99px; background: #A09890; flex: none;"></span>
-        <div style="flex: 1;"><div style="font-size: 22px; font-weight: 600; margin-bottom: 6px;">Puzzle afternoon</div><div style="font-size: 15px; line-height: 1.6; color: #6B6560;">Found a trick to get dinner eaten without a fight. Small win, big relief.</div><div style="font-size: 13px; color: #6B6560; margin-top: 6px;">Intention: Easy does it · 12 steps · all done</div></div>
+        <div style="flex: 1;"><div style="font-size: 22px; font-weight: 600; margin-bottom: 6px;">Long walk with an old friend</div><div style="font-size: 15px; line-height: 1.6; color: #6B6560;">Three hours of talking, and I didn't check my phone once.</div><div style="font-size: 13px; color: #6B6560; margin-top: 6px;">Intention: Be present · 3 steps · all done</div></div>
       </div>
       <div style="display: flex; gap: 22px; align-items: center;">
         <div style="width: 44px; text-align: right; font-size: 13px; color: #6B6560;"><span style="font-weight: 700; letter-spacing: 0.1em; font-size: 11px;">MON</span> 5</div>
         <span style="width: 14px; height: 14px; border-radius: 99px; border: 2px solid #A09890; background: #FFFCF7; flex: none;"></span>
-        <div style="flex: 1; font-size: 15px; color: #372C22;">Production check · 2 steps</div>
+        <div style="flex: 1; font-size: 15px; color: #372C22;">Draft the onboarding copy · 2 steps</div>
       </div>
       <div style="display: flex; gap: 22px; align-items: center;">
         <div style="width: 44px; text-align: right; font-size: 13px; color: #6B6560;"><span style="font-weight: 700; letter-spacing: 0.1em; font-size: 11px;">SUN</span> 4</div>
         <span style="width: 14px; height: 14px; border-radius: 99px; border: 2px solid #A09890; background: #FFFCF7; flex: none;"></span>
-        <div style="flex: 1; font-size: 15px; color: #372C22;">Lunch with an old friend · all done</div>
+        <div style="flex: 1; font-size: 15px; color: #372C22;">Sunday pancakes · all done</div>
       </div>
       <div style="display: flex; gap: 22px; align-items: flex-start;">
         <div style="width: 44px; text-align: right;"><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #6B6560;">THU</div><div style="font-size: 26px; font-weight: 600;">1</div></div>
@@ -425,7 +445,7 @@ section{padding-left:20px !important;padding-right:20px !important}
 </section>
 
 <!-- ============ PRINCIPLES ============ -->
-<section class="sec" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
+<section class="sec" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px 96px;">
   <h2 style="margin: 0 auto 64px; max-width: 900px; text-align: center; font-size: 56px; line-height: 1.08; font-weight: 800; letter-spacing: -0.035em;">Not more productive.<br><span style="color: #E85D20;">More intentional.</span></h2>
   <div class="g3 g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
     <div style="display: flex; flex-direction: column; gap: 12px; padding: 8px;">
@@ -441,7 +461,7 @@ section{padding-left:20px !important;padding-right:20px !important}
     <div style="display: flex; flex-direction: column; gap: 12px; padding: 8px;">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
       <div style="font-size: 20px; font-weight: 700;">Yours, privately</div>
-      <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #6B6560;">[PRIVACY DETAIL — where data lives, export, who can see it]</p>
+      <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #6B6560;">Your intentions, journal and photos are yours alone — stored in the EU, never shown to anyone else.</p>
     </div>
     <div style="display: flex; flex-direction: column; gap: 12px; padding: 8px;">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="M13.5 6.5l4 4"></path></svg>
@@ -451,16 +471,64 @@ section{padding-left:20px !important;padding-right:20px !important}
   </div>
 </section>
 
+<!-- ============ FOUNDER NOTE ============ -->
+<section id="story" class="sec" style="background: #FFFCF7; border-top: 1px solid #EDE3D6; border-bottom: 1px solid #EDE3D6; padding: 112px 32px;">
+  <div style="max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;">
+    <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #E85D20;">WHY I'M BUILDING THIS</div>
+    <p class="story-lead" style="margin: 0; font-size: 26px; line-height: 1.5; font-weight: 600; letter-spacing: -0.01em; color: #1A1614;">There's more I can do than ever — more tools, more ideas, more AI that can do things for me. And yet the days kept slipping by without me spending them on what I actually care about.</p>
+    <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #372C22;">I didn't want another system to manage. I wanted one quiet place that asks me every morning what matters, and lets me give it a small piece of the day. The deciding is still mine — that's the whole point.</p>
+    <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #372C22;">Motivian is still early, and I'm shaping it together with the people who use it. If this sounds like something you've been missing, I'd love for you to join.</p>
+    <div style="display: flex; align-items: center; gap: 14px; margin-top: 8px;">
+      <span style="width: 48px; height: 48px; border-radius: 99px; background: #F7DED1; color: #E85D20; font-size: 20px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;">N</span>
+      <div><div style="font-size: 16px; font-weight: 700;">Naoto</div><div style="font-size: 14px; color: #6B6560;">Maker of Motivian</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="sec faq" style="max-width: 820px; margin: 0 auto; padding: 120px 32px;">
+  <h2 style="margin: 0 0 40px; font-size: 46px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; text-align: center;">Questions</h2>
+  <div style="display: flex; flex-direction: column; border-top: 1px solid #EDE3D6;">
+    <details style="border-bottom: 1px solid #EDE3D6;">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 18px; font-weight: 700; min-height: 44px;">Is Motivian a to-do app?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none;"><path d="M12 5v14M5 12h14"></path></svg></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 1.7; color: #6B6560; max-width: 680px;">Not really. There are steps to tick off, but the point is the why behind them: one intention, a few small steps, and the things that matter to you, always in view.</p>
+    </details>
+    <details style="border-bottom: 1px solid #EDE3D6;">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 18px; font-weight: 700; min-height: 44px;">Does Motivian use AI?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none;"><path d="M12 5v14M5 12h14"></path></svg></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 1.7; color: #6B6560; max-width: 680px;">Not for your intention or your steps — deciding what matters is the part worth doing yourself. We're listening to feedback about where a light, optional helper might fit (reflection, for example), but Motivian won't decide for you.</p>
+    </details>
+    <details style="border-bottom: 1px solid #EDE3D6;">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 18px; font-weight: 700; min-height: 44px;">What happens if I skip a day?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none;"><path d="M12 5v14M5 12h14"></path></svg></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 1.7; color: #6B6560; max-width: 680px;">Nothing. There are no streaks to break. A blank day is just a blank day, and tomorrow starts fresh.</p>
+    </details>
+    <details style="border-bottom: 1px solid #EDE3D6;">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 18px; font-weight: 700; min-height: 44px;">What does it cost?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none;"><path d="M12 5v14M5 12h14"></path></svg></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 1.7; color: #6B6560; max-width: 680px;">Pricing isn't set yet. Joining the waitlist is free and doesn't commit you to anything.</p>
+    </details>
+    <details style="border-bottom: 1px solid #EDE3D6;">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 18px; font-weight: 700; min-height: 44px;">Where is my data stored?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none;"><path d="M12 5v14M5 12h14"></path></svg></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 1.7; color: #6B6560; max-width: 680px;">In the EU (Frankfurt). Your intentions, journal and photos are private to you.</p>
+    </details>
+    <details style="border-bottom: 1px solid #EDE3D6;">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 18px; font-weight: 700; min-height: 44px;">Can I use it on my phone?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none;"><path d="M12 5v14M5 12h14"></path></svg></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 1.7; color: #6B6560; max-width: 680px;">Motivian starts on the web. Dedicated mobile apps are on the way.</p>
+    </details>
+  </div>
+</section>
+
 <!-- ============ FINAL CTA ============ -->
 <section class="cta-sec" id="start" style="max-width: 1200px; margin: 0 auto; padding: 0 32px 120px;">
   <div class="cta-box" style="background: #1A1614; color: #FDF3EB; border-radius: 36px; padding: 88px 48px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 24px;">
     <p style="margin: 0; font-size: 16px; font-style: italic; color: #CFC6BE;">Small steps every day lead to big changes.</p>
     <h2 style="margin: 0; font-size: 56px; line-height: 1.06; font-weight: 800; letter-spacing: -0.035em; max-width: 780px;">What matters to you deserves a piece of <span style="color: #E85D20;">today.</span></h2>
-    <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 8px;">
-      <a class="btn-primary" href="#signup" style="font-size: 17px; font-weight: 700; color: #FFFFFF; background: #E85D20; padding: 16px 32px; border-radius: 999px; min-height: 52px; display: inline-flex; align-items: center;">Start today</a>
-      <a href="#signin" style="font-size: 17px; font-weight: 600; color: #FDF3EB; border: 1px solid #4A433D; padding: 16px 28px; border-radius: 999px; min-height: 52px; display: inline-flex; align-items: center;">I already have an account</a>
-    </div>
-    <p style="margin: 0; font-size: 14px; color: #B8AFA6;">[PLATFORM NOTE — web now, mobile coming]</p>
+    <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #CFC6BE; max-width: 520px;">Motivian is in early access. Leave your email and you'll be among the first to try it.</p>
+    <form class="waitlist" action="#" method="post" style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 480px; justify-content: center;">
+        <label for="cta-email" class="sr-only">Email address</label>
+        <input id="cta-email" class="wl-input" type="email" name="email" required autocomplete="email" placeholder="you@example.com" style="flex: 1 1 220px; min-width: 0; min-height: 52px; padding: 0 20px; font: inherit; font-size: 16px; color: #FDF3EB; background: #2A2420; border: 1px solid #4A433D; border-radius: 999px;">
+        <button class="btn-primary" type="submit" style="flex: none; min-height: 52px; padding: 0 26px; font: inherit; font-size: 16px; font-weight: 700; color: #FFFFFF; background: #E85D20; border: 0; border-radius: 999px; cursor: pointer;">Get early access</button>
+        <p class="wl-msg" role="status" aria-live="polite" style="flex-basis: 100%; margin: 4px 0 0; min-height: 22px; font-size: 14px; color: #CFC6BE;"></p>
+      </form>
+    <p style="margin: 0; font-size: 14px; color: #B8AFA6;">Web first — mobile apps are on the way.</p>
   </div>
 </section>
 
@@ -520,6 +588,36 @@ section{padding-left:20px !important;padding-right:20px !important}
   });
   el.addEventListener('mouseleave', () => { if (ready) el.style.transform = FLAT; });
 })();
+</script>
+<script>
+// Waitlist: set WAITLIST_ENDPOINT (and headers) once a backend exists.
+// Example for Supabase: 'https://<project>.supabase.co/rest/v1/waitlist' with apikey/Authorization headers.
+const WAITLIST_ENDPOINT = '';
+const WAITLIST_HEADERS = { 'Content-Type': 'application/json' };
+document.querySelectorAll('form.waitlist').forEach((form) => {
+  const msg = form.querySelector('.wl-msg');
+  const btn = form.querySelector('button');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = form.email.value.trim();
+    if (!form.email.checkValidity()) { msg.textContent = 'Please enter a valid email address.'; form.email.focus(); return; }
+    if (!WAITLIST_ENDPOINT) { msg.textContent = "Thanks! The waitlist isn't open quite yet — please check back soon."; return; }
+    btn.disabled = true;
+    try {
+      const res = await fetch(WAITLIST_ENDPOINT, { method: 'POST', headers: WAITLIST_HEADERS, body: JSON.stringify({ email }) });
+      if (!res.ok && res.status !== 409) throw new Error(res.status);
+      msg.textContent = "You're on the list. We'll let you know when it's your turn.";
+      form.reset();
+    } catch (err) {
+      msg.textContent = 'Something went wrong. Please try again in a moment.';
+    } finally { btn.disabled = false; }
+  });
+});
+// Keep demo dates current.
+document.querySelectorAll('[data-today]').forEach((el) => {
+  const opts = el.dataset.today === 'long' ? { weekday: 'short', month: 'short', day: 'numeric' } : { weekday: 'short', month: 'short', day: 'numeric' };
+  el.textContent = new Date().toLocaleDateString('en-US', opts);
+});
 </script>
 </body>
 </html>
