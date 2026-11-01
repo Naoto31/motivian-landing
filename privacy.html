@@ -22,6 +22,7 @@ header{border-bottom:1px solid #EDE3D6;background:rgba(253,243,235,.92)}
 header .bar{max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{font-size:24px;font-weight:800;letter-spacing:-.02em;color:#E85D20}
 .btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:#E85D20;color:#fff;font-weight:700;font-size:15px}
+.acts{display:flex;align-items:center;gap:6px}.login{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-weight:600;font-size:15px;color:#1A1614}
 .btn:hover{background:#D04F15;color:#fff;text-decoration:none}
 main{padding:88px 0 112px}
 .eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;color:#E85D20;margin:0 0 12px}
@@ -40,7 +41,7 @@ footer nav{display:flex;gap:24px;flex-wrap:wrap}footer nav a{color:#6B6560}foote
 </style>
 </head>
 <body>
-<header><div class="bar"><a class="logo" href="./">Motivian</a><a class="btn" href="./#start">Get early access</a></div></header>
+<header><div class="bar"><a class="logo" href="./">Motivian</a><div class="acts"><a class="login" href="./#login" data-app="login">Log in</a><a class="btn" href="./#pricing" data-app="signup">Start free trial</a></div></div></header>
 <main><div class="wrap">
 
 <p class="eyebrow">LEGAL</p>
@@ -57,10 +58,7 @@ footer nav{display:flex;gap:24px;flex-wrap:wrap}footer nav a{color:#6B6560}foote
 <h2>3. No cookies, no tracking</h2>
 <p>We don't set cookies and don't use analytics, advertising or tracking tools. Fonts are served from this website itself, so no connection is made to Google Fonts or other font services.</p>
 
-<h2>4. Waitlist</h2>
-<p>The waitlist isn't collecting emails yet. Once it opens, we will only use your email address to let you know about early access to Motivian. The legal basis will be your consent (Art. 6(1)(a) GDPR), which you can withdraw at any time. We'll update this section with where the data is stored before the waitlist goes live.</p>
-
-<h2>5. Your rights</h2>
+<h2>4. Your rights</h2>
 <p>Under the GDPR you have the right to:</p>
 <ul>
 <li>access the personal data we hold about you,</li>
@@ -78,5 +76,6 @@ footer nav{display:flex;gap:24px;flex-wrap:wrap}footer nav a{color:#6B6560}foote
 <footer><div class="bar"><a class="logo" style="font-size:20px" href="./">Motivian</a>
 <nav aria-label="Footer"><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a><a href="imprint.html">Imprint</a><a href="contact.html">Contact</a></nav>
 <span>© 2026 Motivian</span></div></footer>
+<script src="app-links.js"></script>
 </body>
 </html>
