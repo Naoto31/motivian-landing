@@ -105,18 +105,14 @@ section{padding-left:20px !important;padding-right:20px !important}
 @media (max-width:900px){.phase-in,.fl-row{grid-template-columns:1fr}.phase{min-height:auto;padding-top:72px;padding-bottom:72px}.phase h3{font-size:34px !important}.hf-keys{grid-template-columns:1fr}.sun{width:150px;height:150px;margin:-75px 0 0 -75px}}
 @media (max-width:720px){.day-intro{padding-top:96px}.day-outro{padding-bottom:96px}.day-intro,.day-outro,.phase{padding-left:20px;padding-right:20px}.hf-col{border-radius:8px}}
 @media (prefers-reduced-motion: reduce){.day,.hf-col,.hf-key{transition:none}}
-/* Focused product shots: crop to what matters, let the edges fade */
-.focus-hero{max-width:1040px;margin:0 auto;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 17%,#000 83%,transparent 100%),linear-gradient(180deg,#000 72%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 17%,#000 83%,transparent 100%),linear-gradient(180deg,#000 72%,transparent 100%);mask-composite:intersect}
-.focus-hero{overflow:hidden}.focus-hero video{display:block;width:100%;height:auto;aspect-ratio:1600/1610;background:#FBEFE6}
-@media (max-width:700px){.focus-hero video{width:168%;margin-left:-34%}}
-.lm-stage{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,.65fr);align-items:center;max-width:1160px;margin:0 auto}
-.lm-map{display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 58% 60% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 58% 60% at 50% 50%,#000 62%,transparent 100%)}
-.lm-card{position:relative;margin:0 0 0 -14%;background:#FFFDFB;border-radius:20px;overflow:hidden;box-shadow:0 2px 4px rgba(26,22,20,.05),0 30px 70px -24px rgba(40,24,10,.38);transform:rotate(1.2deg)}
-.lm-card img{display:block;width:100%;height:auto}
-.lm-card figcaption{font-size:13px;color:#6B6560;padding:10px 16px 14px;border-top:1px solid #EFE8E1}
-.focus-moments{max-width:1000px;margin:0 auto;border-radius:28px;overflow:hidden;background:#FCEFE7;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 62%,transparent 100%)}
-.focus-moments img{display:block;width:100%;height:auto}
-@media (max-width:900px){.lm-stage{grid-template-columns:1fr}.lm-card{width:min(360px,86%);margin:-6% 0 0 auto;transform:none}.focus-hero{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%),linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%),linear-gradient(180deg,#000 72%,transparent 100%)}}
+/* App shots at ~60% width, text beside them */
+.hero-shot{max-width:920px;margin:0 auto}
+.split{display:grid;grid-template-columns:minmax(0,.68fr) minmax(0,1fr);gap:40px 64px;align-items:center}
+.split.rev{grid-template-columns:minmax(0,1fr) minmax(0,.68fr)}
+.split-txt{display:flex;flex-direction:column;gap:22px}
+#home .split{grid-template-columns:minmax(0,1fr) minmax(0,.62fr)}
+#home .hf-keys{grid-template-columns:1fr;margin-top:0;gap:12px}
+@media (max-width:900px){.split,.split.rev,#home .split{grid-template-columns:1fr}.split.rev .win{order:2}}
 </style>
 </head>
 <body>
@@ -158,11 +154,11 @@ section{padding-left:20px !important;padding-right:20px !important}
 
 <!-- ============ PRODUCT SHOWCASE (real app, demo account) ============ -->
 <section id="inside" style="max-width: 1240px; margin: 0 auto; padding: 8px 32px 112px;">
-  <div class="focus-hero">
-    <video data-autoplay muted loop playsinline preload="auto" width="1600" height="1610" poster="media/hero-poster.jpg" aria-label="Motivian Home: today's intention and steps in the middle, with past moments on the left and where you're heading on the right.">
-      <source src="media/hero.webm" type="video/webm">
-      <source src="media/hero.mp4" type="video/mp4">
-    </video>
+  <div class="hero-shot">
+    <div class="win">
+      <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+      <video class="win-media" data-autoplay muted loop playsinline preload="none" width="1600" height="1131" poster="media/today-poster.jpg" aria-label="Motivian Home: checking off a step, then answering the evening reflection."><source src="media/today.webm" type="video/webm"><source src="media/today.mp4" type="video/mp4"></video>
+    </div>
   </div>
   <p class="win-cap">The real app, recorded with a demo account.</p>
 </section>
@@ -244,6 +240,7 @@ section{padding-left:20px !important;padding-right:20px !important}
     <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Behind you, ahead of you,<br>and today in the middle.</h2>
     <p style="margin: 20px 0 0; font-size: 18px; line-height: 1.65; color: #6B6560; max-width: 600px;">Home puts the moments you've lived and where you're heading on the same screen as today. You see the whole picture — and still only have to think about one day.</p>
   </div>
+  <div class="split">
   <div class="win homefig" id="homefig">
     <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
     <div class="hf-body">
@@ -257,6 +254,7 @@ section{padding-left:20px !important;padding-right:20px !important}
     <button type="button" class="hf-key" data-i="0" role="listitem"><span class="hf-name">Echoes</span><span class="hf-t">Moments you've lived</span><span class="hf-d">Past moments resurface — a birthday, a small win, a slow Sunday — so you remember what you've cared about all along.</span></button>
     <button type="button" class="hf-key" data-i="1" role="listitem"><span class="hf-name">Today</span><span class="hf-t">What you're doing now</span><span class="hf-d">One intention, a few steps, a short look back tonight. Everything else can wait.</span></button>
     <button type="button" class="hf-key" data-i="2" role="listitem"><span class="hf-name">Vision</span><span class="hf-t">Where you're heading</span><span class="hf-d">Your areas and current focus stay in view, so you always know why today's steps matter.</span></button>
+  </div>
   </div>
 </section>
 
@@ -286,7 +284,8 @@ section{padding-left:20px !important;padding-right:20px !important}
 
 <!-- ============ LIFE MAP ============ -->
 <section class="sec" id="map" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
-  <div class="g2" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 72px; align-items: end; margin-bottom: 56px;">
+  <div class="split">
+    <div class="split-txt">
     <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Everything that matters,<br>in one map.</h2>
     <div style="display: flex; flex-direction: column; gap: 20px;">
       <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Name the parts of your life you care about — family, work, the sport you love — in your own words. Each one keeps what's on your mind, ideas for later and longer paths. Chase many things at once without losing any of them.</p>
@@ -295,27 +294,28 @@ section{padding-left:20px !important;padding-right:20px !important}
         <div><div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Ideas — no pressure</div><div style="font-size: 15px; line-height: 1.55; color: #6B6560;">Park small things you <em>could</em> do next to the Area or Path they belong to. Add one to today when there's room.</div></div>
       </div>
     </div>
-  </div>
-  <div class="lm-stage">
-    <img class="lm-map" src="media/lifemap-map.jpg" width="1560" height="1104" loading="lazy" alt="Life Map: Me in the middle, surrounded by Family, Climbing, Work, Health, Learning and Side project.">
-    <figure class="lm-card">
-      <img src="media/lifemap-family.jpg" width="686" height="785" loading="lazy" alt="Inside the Family area: a path, Teach Emma to ride a bike, and ideas like a weekend at the lake.">
-      <figcaption>Inside Family: a path and a few ideas for later.</figcaption>
-    </figure>
+    </div>
+    <div class="win">
+      <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+      <video class="win-media" data-autoplay muted loop playsinline preload="none" width="1600" height="1131" poster="media/lifemap-poster.jpg" aria-label="Life Map: areas like Family, Work and Climbing around Me. Opening an area shows what is on your mind, its paths and ideas."><source src="media/lifemap.webm" type="video/webm"><source src="media/lifemap.mp4" type="video/mp4"></video>
+    </div>
   </div>
 </section>
 
 <!-- ============ MOMENTS ============ -->
 <section class="sec" id="moments" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
-  <div style="display: flex; flex-direction: column; gap: 24px; max-width: 640px; margin-bottom: 56px;">
+  <div class="split rev">
+    <div class="win">
+      <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+      <img class="win-media" src="media/moments.jpg" width="1600" height="1131" loading="lazy" alt="Moments: a timeline of days, each with one line about what happened and the intention behind it.">
+    </div>
+  <div class="split-txt" style="display: flex; flex-direction: column; gap: 24px;">
     <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">The days you lived, kept.</h2>
     <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Each evening becomes a quiet line in your timeline — what you lived, what you learned. Months later, one comes back as an Echo, a reminder of what you've cared about all along.</p>
     <a href="#signup" data-app="signup" style="align-self: flex-start; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; min-height: 44px;">Try it free for 14 days
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
     </a>
   </div>
-  <div class="focus-moments">
-    <img src="media/moments-timeline.jpg" width="1500" height="1208" loading="lazy" alt="Moments: a timeline of days, each with one line about what happened and the intention behind it.">
   </div>
 </section>
 
