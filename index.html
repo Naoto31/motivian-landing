@@ -57,6 +57,13 @@ section{padding-left:20px !important;padding-right:20px !important}
 #inside{padding-bottom:72px !important}
 #story{padding-top:72px !important;padding-bottom:72px !important}
 }
+.win{max-width:1176px;margin:0 auto;background:#FFFFFF;border:1px solid #E7E1DA;border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(26,22,20,.04),0 24px 64px -24px rgba(55,44,34,.28)}
+.win-bar{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;background:#F6F2ED;border-bottom:1px solid #E7E1DA}
+.win-bar i{width:11px;height:11px;border-radius:99px;background:#DDD5CC}
+.win-bar span{flex:1;margin-right:54px;text-align:center;font-size:12px;color:#8A817A;letter-spacing:.01em}
+.win-media{display:block;width:100%;height:auto;aspect-ratio:1600/1131;background:#FBEFE6}
+.win-cap{margin:16px 0 0;text-align:center;font-size:13px;color:#6B6560}
+@media (max-width:720px){.win{border-radius:12px}.win-bar{height:28px}.win-bar span{font-size:11px;margin-right:40px}.win-bar i{width:8px;height:8px}}
 </style>
 </head>
 <body>
@@ -95,36 +102,16 @@ section{padding-left:20px !important;padding-right:20px !important}
   </div>
 </section>
 
-<!-- ============ PRODUCT SHOWCASE (Home, demo data) ============ -->
+<!-- ============ PRODUCT SHOWCASE (real app, demo account) ============ -->
 <section id="inside" style="max-width: 1240px; margin: 0 auto; padding: 0 32px 112px;">
-  <div class="stage" id="stage">
-    <div class="pnl" role="img" aria-label="Example of today in Motivian: an intention and a few steps, with finished steps folding away.">
-      <div class="p-head"><span class="p-title">Today</span><span class="p-date" data-today="short">Sat, Nov 21</span></div>
-      <div class="p-sub">Intention</div>
-      <div class="p-int">Slow and focused</div>
-      <div class="p-prog"><div class="bar"><i id="pbar" style="width: 40%;"></i></div><span id="pcount">2 of 5 done</span></div>
-      <ul class="steps" id="steps">
-        <li class="step"><span class="cb"></span><span class="st">Finish the project proposal</span><span class="tag" style="--c: #A34B24;">Craft</span></li>
-        <li class="step"><span class="cb"></span><span class="st">Call the bike shop</span><span class="tag" style="--c: #52703C;">Home</span></li>
-        <li class="step"><span class="cb"></span><span class="st">Play piano for fifteen minutes</span><span class="tag" style="--c: #7E4D72;">Music</span></li>
-      </ul>
-      <div class="add">+ Add a step</div>
-    </div>
-    <div class="side">
-      <div class="pnl echo" role="img" aria-label="Example of an Echo: a day from last spring coming back.">
-        <div class="p-sub">An Echo from last spring</div>
-        <p class="echo-q">“Played for fifteen minutes before bed. Forgot how good that feels.”</p>
-        <div class="echo-meta"><span class="dot" style="background: #C9A2C0;"></span>Music, March 29</div>
-      </div>
-      <div class="pnl" role="img" aria-label="Example of an evening look back.">
-        <div class="p-sub">Tonight</div>
-        <div class="eve-row"><span class="lbl">Highlight</span><span>Soup and a board game</span></div>
-        <div class="eve-row"><span class="lbl">In one word</span><span>Unhurried</span></div>
-      </div>
-    </div>
-    <span class="cursor" id="cursor" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 2l15 9.5-6.6 1.3L16 20l-3 1.5-3.6-7.3L4 18.5z" fill="#1A1614" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"></path></svg></span>
+  <div class="win">
+    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+    <video class="win-media" data-autoplay muted loop playsinline preload="none" width="1600" height="1131" poster="media/today-poster.jpg" aria-label="Motivian Home: checking off a step, then answering the evening reflection.">
+      <source src="media/today.webm" type="video/webm">
+      <source src="media/today.mp4" type="video/mp4">
+    </video>
   </div>
-  <p style="margin: 16px 0 0; text-align: center; font-size: 13px; color: #6B6560;">Example content.</p>
+  <p class="win-cap">The real app, recorded with a demo account.</p>
 </section>
 
 <!-- ============ WHY ============ -->
@@ -221,81 +208,51 @@ section{padding-left:20px !important;padding-right:20px !important}
     <span style="font-size: 17px; color: #6B6560;">Your calendar knows <strong style="color: #1A1614;">when</strong>.</span>
     <span style="font-size: 17px; color: #6B6560;">Motivian holds <strong style="color: #E85D20;">why</strong>.</span>
   </div>
+  <div style="margin-top: 72px;">
+  <div class="win">
+    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+    <img class="win-media" src="media/week.jpg" width="1600" height="1131" loading="lazy" alt="Week view: steps planned across the days, with a summary of where the week went.">
+  </div>
+  <p class="win-cap">Week: drag steps into the days, then see where your week went.</p>
+  </div>
 </section>
 
 <!-- ============ LIFE MAP ============ -->
-<section class="sec" id="map" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
-  <div style="flex: 1 1 460px; min-width: 0;">
-    <div class="stage lm">
-      <div class="pnl" role="img" aria-label="Example of a Life Map: areas named in your own words, with small ideas that can be added to today.">
-        <div class="p-head"><span class="p-title">My Life Map</span><span class="p-date">5 areas</span></div>
-        <div class="week"><span class="me">Me</span><div><div class="p-sub" style="margin: 0;">This week</div><div style="font-weight: 700; font-size: 16px;">A slow, steady week</div></div></div>
-        <div class="tiles">
-          <div class="tile wide" style="--c: #7E4D72;"><span class="badge">2 ideas</span><b>Music</b><small>Play again, just for the joy of it</small></div>
-          <div class="tile" style="--c: #46617E;"><b>Family</b></div>
-          <div class="tile" style="--c: #7E6019;"><b>Travel</b></div>
-          <div class="tile" style="--c: #2F6B5C;"><b>Health</b></div>
-          <div class="tile" style="--c: #52703C;"><b>Home</b></div>
-        </div>
-        <div class="p-sub" style="margin-top: 22px;">Ideas for Music</div>
-        <div class="idea"><span>Play fifteen minutes after dinner</span><span class="to-today" id="lmbtn">+ Today</span></div>
-        <div class="idea"><span>Find the old sheet music</span><span class="to-today">+ Today</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+<section class="sec" id="map" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
+  <div class="g2" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 72px; align-items: end; margin-bottom: 56px;">
     <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Put what matters<br>into words.</h2>
-    <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Name the parts of your life you care about, in your own words. Not a plan to follow — just something to come back to when you're wondering what today is for.</p>
-    <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Name the parts of your life you care about, in your own words. Not a plan to follow — just something to come back to when you're wondering what today is for.</p>
       <div style="display: flex; gap: 16px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E7E1DA; border-radius: 18px; padding: 18px 20px;">
-        <span style="flex: none; width: 40px; height: 40px; border-radius: 12px; background: #E3EDE9; color: #2F6B5C; display: inline-flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"></path></svg></span>
+        <span style="flex: none; width: 40px; height: 40px; border-radius: 12px; background: #E3EDE9; color: #2F6B5C; display: inline-flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg></span>
         <div><div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Ideas — no pressure</div><div style="font-size: 15px; line-height: 1.55; color: #6B6560;">Park small things you <em>could</em> do next to the Area or Path they belong to. Add one to today when there's room.</div></div>
       </div>
     </div>
   </div>
+  <div class="win">
+    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+    <video class="win-media" data-autoplay muted loop playsinline preload="none" width="1600" height="1131" poster="media/lifemap-poster.jpg" aria-label="Life Map: areas like Family, Work and Climbing around Me. Opening an area shows what is on your mind, its paths and ideas.">
+      <source src="media/lifemap.webm" type="video/webm">
+      <source src="media/lifemap.mp4" type="video/mp4">
+    </video>
+  </div>
+  <p class="win-cap">Life Map, and two of its areas: Work and Family.</p>
 </section>
 
 <!-- ============ MOMENTS ============ -->
-<section class="sec" id="moments" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px; display: flex; flex-wrap: wrap; gap: 72px; align-items: center;">
-  <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+<section class="sec" id="moments" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
+  <div style="display: flex; flex-direction: column; gap: 24px; max-width: 640px; margin-bottom: 56px;">
     <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">The days you lived, kept.</h2>
     <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Each evening becomes a quiet line in your timeline — what you lived, what you learned. Months later, one comes back as an Echo, a reminder of what you've cared about all along.</p>
     <a href="#signup" data-app="signup" style="align-self: flex-start; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; min-height: 44px;">Try it free for 14 days
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
     </a>
   </div>
-
-  <div style="flex: 1.3 1 520px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1DA; border-radius: 28px; padding: 40px 36px; position: relative;">
-    <div class="tl-line" style="position: absolute; left: 107px; top: 61px; bottom: 60px; width: 2px; background: #E7E1DA;"></div>
-    <div style="display: flex; flex-direction: column; gap: 30px;">
-      <div style="display: flex; gap: 22px; align-items: flex-start;">
-        <div style="width: 44px; text-align: right;"><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #E85D20;">TODAY</div><div style="font-size: 26px; font-weight: 600; color: #E85D20;">7</div></div>
-        <span class="tl-dot" style="position: relative; z-index: 1; margin-top: 14px; width: 14px; height: 14px; border-radius: 99px; background: #E85D20; flex: none;"></span>
-        <div style="flex: 1; font-size: 16px; line-height: 1.6;">Slow start, but the afternoon finally clicked.<div style="font-size: 13px; color: #6B6560; margin-top: 6px;">Intention: Slow &amp; focused · 4 steps · 2 done</div></div>
-      </div>
-      <div style="display: flex; gap: 22px; align-items: flex-start;">
-        <div style="width: 44px; text-align: right;"><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #6B6560;">TUE</div><div style="font-size: 26px; font-weight: 600;">6</div></div>
-        <span class="tl-dot" style="position: relative; z-index: 1; margin-top: 14px; width: 14px; height: 14px; border-radius: 99px; background: #A09890; flex: none;"></span>
-        <div style="flex: 1;"><div style="font-size: 22px; font-weight: 600; margin-bottom: 6px;">Long walk with an old friend</div><div style="font-size: 15px; line-height: 1.6; color: #6B6560;">Three hours of talking, and I didn't check my phone once.</div><div style="font-size: 13px; color: #6B6560; margin-top: 6px;">Intention: Be present · 3 steps · all done</div></div>
-      </div>
-      <div style="display: flex; gap: 22px; align-items: center;">
-        <div style="width: 44px; text-align: right; font-size: 13px; color: #6B6560;"><span style="font-weight: 700; letter-spacing: 0.1em; font-size: 11px;">MON</span> 5</div>
-        <span class="tl-dot" style="position: relative; z-index: 1; width: 14px; height: 14px; border-radius: 99px; border: 2px solid #A09890; background: #FFFFFF; flex: none;"></span>
-        <div style="flex: 1; font-size: 15px; color: #372C22;">Finish the project proposal · 2 steps</div>
-      </div>
-      <div style="display: flex; gap: 22px; align-items: center;">
-        <div style="width: 44px; text-align: right; font-size: 13px; color: #6B6560;"><span style="font-weight: 700; letter-spacing: 0.1em; font-size: 11px;">SUN</span> 4</div>
-        <span class="tl-dot" style="position: relative; z-index: 1; width: 14px; height: 14px; border-radius: 99px; border: 2px solid #A09890; background: #FFFFFF; flex: none;"></span>
-        <div style="flex: 1; font-size: 15px; color: #372C22;">Sunday pancakes · all done</div>
-      </div>
-      <div style="display: flex; gap: 22px; align-items: flex-start;">
-        <div style="width: 44px; text-align: right;"><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #6B6560;">THU</div><div style="font-size: 26px; font-weight: 600;">1</div></div>
-        <span class="tl-dot" style="position: relative; z-index: 1; margin-top: 14px; width: 14px; height: 14px; border-radius: 99px; background: #A09890; flex: none;"></span>
-        <div style="flex: 1;"><div style="font-size: 22px; font-weight: 600; margin-bottom: 6px;">Dinner, all of us</div><div style="font-size: 15px; line-height: 1.6; color: #6B6560;">Want to think more about language and music for the kids.</div></div>
-      </div>
-    </div>
+  <div class="win">
+    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+    <img class="win-media" src="media/moments.jpg" width="1600" height="1131" loading="lazy" alt="Moments: a timeline of days, each with one line about what happened and the intention behind it.">
   </div>
+  <p class="win-cap">Moments: every evening becomes one line.</p>
 </section>
 
 <!-- ============ MOBILE ============ -->
@@ -633,51 +590,19 @@ window.addEventListener('resize', placeTimeline);
 if (document.fonts) document.fonts.ready.then(placeTimeline);
 </script>
 <script>
+// Product videos: play only while on screen; respect reduced motion (poster stays).
 {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const stage = document.getElementById('stage');
-  const steps = [...document.querySelectorAll('#steps .step')];
-  const bar = document.getElementById('pbar'), count = document.getElementById('pcount');
-  const cursor = document.getElementById('cursor');
-  const lmbtn = document.getElementById('lmbtn');
-  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-  const visible = { hero: false, lm: false };
-  const io = new IntersectionObserver((es) => es.forEach((e) => { visible[e.target === stage ? 'hero' : 'lm'] = e.isIntersecting; }));
-  io.observe(stage); if (lmbtn) io.observe(lmbtn.closest('.stage'));
-
-  async function heroLoop() {
-    let done = 2;
-    for (;;) {
-      for (const li of steps) {
-        while (!visible.hero) await wait(400);
-        const b = stage.getBoundingClientRect(), c = li.querySelector('.cb').getBoundingClientRect();
-        cursor.style.opacity = 1;
-        cursor.style.transform = `translate(${c.left - b.left + 8}px, ${c.top - b.top + 8}px)`;
-        await wait(1100);
-        li.classList.add('on'); done++;
-        bar.style.width = (done / 5 * 100) + '%'; count.textContent = `${done} of 5 done`;
-        await wait(900);
-        li.classList.add('gone');
-        await wait(1400);
-      }
-      cursor.style.opacity = 0;
-      count.textContent = 'All done for today';
-      await wait(2600);
-      steps.forEach((li) => li.classList.remove('on', 'gone'));
-      done = 2; bar.style.width = '40%'; count.textContent = '2 of 5 done';
-      await wait(1600);
-    }
+  const vids = [...document.querySelectorAll('video[data-autoplay]')];
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    vids.forEach((v) => { v.controls = true; });
+  } else {
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; v.play().catch(() => { v.controls = true; }); }
+      else v.pause();
+    }), { threshold: 0.35 });
+    vids.forEach((v) => io.observe(v));
   }
-  async function lmLoop() {
-    for (;;) {
-      while (!visible.lm) await wait(400);
-      await wait(2200);
-      lmbtn.classList.add('added'); lmbtn.textContent = 'Added to today';
-      await wait(2800);
-      lmbtn.classList.remove('added'); lmbtn.textContent = '+ Today';
-    }
-  }
-  if (!reduce) { heroLoop(); if (lmbtn) lmLoop(); }
 }
 </script>
 <script src="app-links.js"></script>
