@@ -64,6 +64,47 @@ section{padding-left:20px !important;padding-right:20px !important}
 .win-media{display:block;width:100%;height:auto;aspect-ratio:1600/1131;background:#FBEFE6}
 .win-cap{margin:16px 0 0;text-align:center;font-size:13px;color:#6B6560}
 @media (max-width:720px){.win{border-radius:12px}.win-bar{height:28px}.win-bar span{font-size:11px;margin-right:40px}.win-bar i{width:8px;height:8px}}
+/* Day: sky follows the scroll */
+.day{position:relative;overflow:clip;background:#241C26;color:#1A1614}
+.sky{position:sticky;top:0;height:100vh;margin-bottom:-100vh;overflow:hidden;pointer-events:none;z-index:0}
+.stars{position:absolute;inset:0;opacity:var(--stars,0);background-image:radial-gradient(1.5px 1.5px at 12% 18%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 26% 42%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 41% 12%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 58% 30%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 72% 8%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 88% 36%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 8% 66%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 94% 60%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 50% 54%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 34% 78%,#fff 50%,transparent 51%)}
+.sun{position:absolute;width:220px;height:220px;margin:-110px 0 0 -110px;border-radius:50%;left:var(--sx,20%);top:var(--sy,110%);background:radial-gradient(circle,#FFD7A8 0 34%,rgba(255,170,110,.55) 35%,rgba(255,170,110,0) 70%);opacity:var(--so,0)}
+.moon{position:absolute;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;left:var(--mx,80%);top:var(--my,110%);box-shadow:inset -18px 8px 0 0 #F4ECDD;opacity:var(--mo,0);filter:drop-shadow(0 0 24px rgba(244,236,221,.35))}
+.day-intro,.day-outro,.phase{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding-left:32px;padding-right:32px}
+.day-intro{padding-top:160px;padding-bottom:40px;color:#FAF3EA}
+.day-outro{padding-top:40px;padding-bottom:160px;color:#FAF3EA;text-align:center}
+.phase{min-height:96vh;display:flex;align-items:center;padding-top:48px;padding-bottom:48px}
+.phase-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px 72px;align-items:center;width:100%}
+.phase-tag{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.65);color:#C2491A}
+.phase-p{color:#5A524B}
+.night,.day-intro,.day-outro{color:#FAF3EA}.night .phase-p{color:#D8CEC3}.night .phase-tag{background:rgba(255,255,255,.1);color:#F6B48C}
+.shot{background:#FFFDFB;border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(26,22,20,.06),0 30px 70px -30px rgba(40,24,10,.45)}
+.shot img,.shot video{display:block;width:100%;height:auto}
+/* no-JS / fallback: each band carries its own sky */
+.day:not(.live) .morning{background:#FBE3D0}.day:not(.live) .noon{background:#FFF6EA}.day:not(.live){background:#1C1822}
+.day:not(.live) .morning,.day:not(.live) .noon{max-width:none}
+/* Home figure */
+.hf-body{position:relative}
+.hf-col{position:absolute;top:5%;bottom:1%;border-radius:14px;border:2px solid transparent;transition:border-color .3s,background-color .3s,box-shadow .3s}
+.homefig.focus .hf-col{background:rgba(250,246,241,.62)}
+.homefig.focus .hf-col.on{background:transparent;border-color:#E85D20;box-shadow:0 0 0 6px rgba(232,93,32,.12)}
+.hf-keys{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.hf-key{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:6px;padding:20px 22px;border-radius:18px;border:1px solid #E7E1DA;background:#FFFFFF;transition:border-color .2s,box-shadow .2s}
+.hf-key:focus-visible{outline:2px solid #E85D20;outline-offset:2px}
+.hf-key.on{border-color:#E85D20;box-shadow:0 0 0 4px rgba(232,93,32,.1)}
+.hf-name{font-size:13px;font-weight:700;color:#E85D20}.hf-t{font-size:20px;font-weight:700;letter-spacing:-.01em}.hf-d{font-size:15px;line-height:1.55;color:#6B6560}
+/* Flow */
+.fl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:56px;position:relative}
+.fl-row{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:32px 64px;align-items:center}
+.fl-txt{display:flex;gap:20px;align-items:flex-start}
+.fl-n{flex:none;width:44px;height:44px;border-radius:99px;background:#E85D20;color:#fff;font-weight:700;font-size:18px;display:inline-flex;align-items:center;justify-content:center}
+.fl-label{font-size:14px;font-weight:700;color:#C2491A;margin-bottom:6px}.fl-title{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}.fl-p{margin:0;font-size:17px;line-height:1.6;color:#5A524B}
+.fl-shot{position:relative;background:#FFFDFB;border-radius:18px;overflow:hidden;border:1px solid #E7E1DA;box-shadow:0 24px 60px -30px rgba(40,24,10,.35)}
+.fl-shot img{display:block;width:100%;height:auto}
+.fl-ring{position:absolute;border:2.5px solid #E85D20;border-radius:12px;box-shadow:0 0 0 5px rgba(232,93,32,.14)}
+@media (max-width:900px){.phase-in,.fl-row{grid-template-columns:1fr}.phase{min-height:auto;padding-top:72px;padding-bottom:72px}.phase h3{font-size:34px !important}.hf-keys{grid-template-columns:1fr}.sun{width:150px;height:150px;margin:-75px 0 0 -75px}}
+@media (max-width:720px){.day-intro{padding-top:96px}.day-outro{padding-bottom:96px}.day-intro,.day-outro,.phase{padding-left:20px;padding-right:20px}.hf-col{border-radius:8px}}
+@media (prefers-reduced-motion: reduce){.day,.hf-col,.hf-key{transition:none}}
 </style>
 </head>
 <body>
@@ -74,7 +115,8 @@ section{padding-left:20px !important;padding-right:20px !important}
   <nav class="nav" style="max-width: 1200px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <a href="#top" style="font-size: 26px; font-weight: 800; letter-spacing: -0.02em; color: #E85D20;">Motivian</a>
     <div class="hide-t" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap; font-size: 15px; font-weight: 500;">
-      <a href="#today" style="color: #372C22;">How it works</a>
+      <a href="#day" style="color: #372C22;">How it works</a>
+      <a href="#home" style="color: #372C22;">Home</a>
       <a href="#map" style="color: #372C22;">Life Map</a>
       <a href="#moments" style="color: #372C22;">Moments</a>
       <a href="#pricing" style="color: #372C22;">Pricing</a>
@@ -95,7 +137,7 @@ section{padding-left:20px !important;padding-right:20px !important}
   <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       <a class="btn-primary" href="#signup" data-app="signup" style="min-height: 54px; padding: 0 28px; display: inline-flex; align-items: center; font-size: 16px; font-weight: 700; color: #FFFFFF; background: #E85D20; border-radius: 999px;">Start your 14-day free trial</a>
-      <a class="btn-ghost" href="#today" style="min-height: 54px; padding: 0 24px; display: inline-flex; align-items: center; font-size: 16px; font-weight: 600; color: #1A1614; border: 1px solid #D9D1C8; border-radius: 999px;">See how it works</a>
+      <a class="btn-ghost" href="#day" style="min-height: 54px; padding: 0 24px; display: inline-flex; align-items: center; font-size: 16px; font-weight: 600; color: #1A1614; border: 1px solid #D9D1C8; border-radius: 999px;">See how it works</a>
     </div>
     <p style="margin: 0; font-size: 14px; color: #6B6560;">No credit card required. Already using Motivian? <a href="#login" data-app="login" style="font-weight: 700;">Log in</a></p>
   </div>
@@ -139,6 +181,136 @@ section{padding-left:20px !important;padding-right:20px !important}
   </div>
 </section>
 
+<!-- ============ A DAY (sky changes with scroll) ============ -->
+<section id="day" class="day">
+  <div class="sky" aria-hidden="true"><div class="stars"></div><div class="sun"></div><div class="moon"></div></div>
+  <div class="day-intro">
+    <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance; max-width: 760px;">From sunrise to bedtime.</h2>
+    <p style="margin: 20px 0 0; font-size: 19px; line-height: 1.6; max-width: 560px;">Motivian follows the shape of your day. A minute in the morning, a few small steps, a quiet look back before bed.</p>
+  </div>
+  <div class="phase morning">
+    <div class="phase-in">
+      <div class="phase-txt">
+        <span class="phase-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 18a5 5 0 0 0-10 0M12 2v7M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1M8 6l4-4 4 4"/></svg>Morning</span>
+        <h3 style="margin: 18px 0 16px; font-size: 44px; line-height: 1.04; font-weight: 700; letter-spacing: -0.04em; text-wrap: balance;">Start with an intention.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; max-width: 440px;" class="phase-p">Before the day pulls you in, write one line for how you want it to go. Not a goal to hit — a direction to lean into.</p>
+      </div>
+      <div class="shot"><img src="media/morning.jpg" width="970" height="220" loading="lazy" alt="Today's intention in Motivian: Deep work, then the wall."></div>
+    </div>
+  </div>
+
+  <div class="phase noon">
+    <div class="phase-in">
+      <div class="phase-txt">
+        <span class="phase-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>During the day</span>
+        <h3 style="margin: 18px 0 16px; font-size: 44px; line-height: 1.04; font-weight: 700; letter-spacing: -0.04em; text-wrap: balance;">Take small steps.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; max-width: 440px;" class="phase-p">A few steps toward what matters. Tick one off and it folds away, so the day stays light.</p>
+      </div>
+      <div class="shot"><video data-autoplay muted loop playsinline preload="none" width="970" height="400" poster="media/day-poster.jpg" aria-label="Checking off steps in Motivian. Finished steps fold away."><source src="media/day.webm" type="video/webm"><source src="media/day.mp4" type="video/mp4"></video></div>
+    </div>
+  </div>
+
+  <div class="phase night">
+    <div class="phase-in">
+      <div class="phase-txt">
+        <span class="phase-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg>Before bed</span>
+        <h3 style="margin: 18px 0 16px; font-size: 44px; line-height: 1.04; font-weight: 700; letter-spacing: -0.04em; text-wrap: balance;">Look back, then let it go.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; max-width: 440px;" class="phase-p">Did you live today's intention? Acknowledge it, keep the moment worth saving, give the day a number if you like. A few minutes, then sleep.</p>
+      </div>
+      <div class="shot"><img src="media/night.jpg" width="950" height="620" loading="lazy" alt="The evening reflection in Motivian: intention achieved, and today rated 10."></div>
+    </div>
+  </div>
+
+  <div class="day-outro">
+    <p style="margin: 0; font-size: 22px; line-height: 1.5; font-weight: 600;">Skip a moment, or a whole day — nothing breaks.</p>
+    <p style="margin: 10px 0 0; font-size: 17px; opacity: .75;">Your calendar knows <strong>when</strong>. Motivian holds <strong style="color: #F28A55;">why</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ HOME: past, today, ahead ============ -->
+<section class="sec" id="home" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px 112px;">
+  <div style="max-width: 760px; margin: 0 0 56px;">
+    <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Behind you, ahead of you,<br>and today in the middle.</h2>
+    <p style="margin: 20px 0 0; font-size: 18px; line-height: 1.65; color: #6B6560; max-width: 600px;">Home puts the moments you've lived and where you're heading on the same screen as today. You see the whole picture — and still only have to think about one day.</p>
+  </div>
+  <div class="win homefig" id="homefig">
+    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+    <div class="hf-body">
+      <img class="win-media" src="media/home.jpg" width="1600" height="1131" loading="lazy" alt="Motivian Home: Echoes on the left, Today in the middle, Vision on the right.">
+      <span class="hf-col" style="left: 5%; width: 26.4%;" data-i="0"></span>
+      <span class="hf-col" style="left: 32.3%; width: 39.3%;" data-i="1"></span>
+      <span class="hf-col" style="left: 72.6%; width: 26.3%;" data-i="2"></span>
+    </div>
+  </div>
+  <div class="hf-keys" role="list">
+    <button type="button" class="hf-key" data-i="0" role="listitem"><span class="hf-name">Echoes</span><span class="hf-t">Moments you've lived</span><span class="hf-d">Past moments resurface — a birthday, a small win, a slow Sunday — so you remember what you've cared about all along.</span></button>
+    <button type="button" class="hf-key" data-i="1" role="listitem"><span class="hf-name">Today</span><span class="hf-t">What you're doing now</span><span class="hf-d">One intention, a few steps, a short look back tonight. Everything else can wait.</span></button>
+    <button type="button" class="hf-key" data-i="2" role="listitem"><span class="hf-name">Vision</span><span class="hf-t">Where you're heading</span><span class="hf-d">Your areas and current focus stay in view, so you always know why today's steps matter.</span></button>
+  </div>
+</section>
+
+<!-- ============ FLOW: anywhere -> today ============ -->
+<section id="flow" style="background: #F1ECE6;">
+  <div class="pad" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px;">
+    <div style="max-width: 760px; margin: 0 0 64px;">
+      <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Put it anywhere.<br>It finds you on the day.</h2>
+      <p style="margin: 20px 0 0; font-size: 18px; line-height: 1.65; color: #6B6560; max-width: 600px;">Add a step inside the part of life it belongs to, or drop it onto a day in your week. When that day comes, it's waiting on Home. Nothing to dig up, nothing to forget.</p>
+    </div>
+    <ol class="fl">
+    <li class="fl-row">
+      <div class="fl-txt"><span class="fl-n">1</span><div><div class="fl-label">In an Area</div><div class="fl-title">Where it belongs</div><p class="fl-p">“Bedtime story with Emma” lives under Family, next to everything else on your mind there.</p></div></div>
+      <div class="fl-shot"><img src="media/flow-area.jpg" width="1200" height="676" loading="lazy" alt="The Family area with Bedtime story with Emma marked for today."><span class="fl-ring" style="left: 2%; top: 65.5%; width: 92.5%; height: 8.5%;"></span></div>
+    </li>
+    <li class="fl-row">
+      <div class="fl-txt"><span class="fl-n">2</span><div><div class="fl-label">In your week</div><div class="fl-title">On the day you choose</div><p class="fl-p">Drag it onto Wednesday. Steps you haven't placed yet wait in To Plan.</p></div></div>
+      <div class="fl-shot"><img src="media/flow-week.jpg" width="1000" height="527" loading="lazy" alt="The week view with Bedtime story with Emma on Wednesday."><span class="fl-ring" style="left: 68.8%; top: 34.2%; width: 30%; height: 10.4%;"></span></div>
+    </li>
+    <li class="fl-row">
+      <div class="fl-txt"><span class="fl-n">3</span><div><div class="fl-label">On Home</div><div class="fl-title">Right there, that morning</div><p class="fl-p">When Wednesday comes, it's one of today's steps — with the rest of your life still in view.</p></div></div>
+      <div class="fl-shot"><img src="media/flow-today.jpg" width="970" height="700" loading="lazy" alt="Home on Wednesday with Bedtime story with Emma among today's steps."><span class="fl-ring" style="left: 2.4%; top: 77.6%; width: 94.8%; height: 9.8%;"></span></div>
+    </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ LIFE MAP ============ -->
+<section class="sec" id="map" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
+  <div class="g2" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 72px; align-items: end; margin-bottom: 56px;">
+    <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Everything that matters,<br>in one map.</h2>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Name the parts of your life you care about — family, work, the sport you love — in your own words. Each one keeps what's on your mind, ideas for later and longer paths. Chase many things at once without losing any of them.</p>
+      <div style="display: flex; gap: 16px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E7E1DA; border-radius: 18px; padding: 18px 20px;">
+        <span style="flex: none; width: 40px; height: 40px; border-radius: 12px; background: #E3EDE9; color: #2F6B5C; display: inline-flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg></span>
+        <div><div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Ideas — no pressure</div><div style="font-size: 15px; line-height: 1.55; color: #6B6560;">Park small things you <em>could</em> do next to the Area or Path they belong to. Add one to today when there's room.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="win">
+    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+    <video class="win-media" data-autoplay muted loop playsinline preload="none" width="1600" height="1131" poster="media/lifemap-poster.jpg" aria-label="Life Map: areas like Family, Work and Climbing around Me. Opening an area shows what is on your mind, its paths and ideas.">
+      <source src="media/lifemap.webm" type="video/webm">
+      <source src="media/lifemap.mp4" type="video/mp4">
+    </video>
+  </div>
+  <p class="win-cap">Life Map, and two of its areas: Work and Family.</p>
+</section>
+
+<!-- ============ MOMENTS ============ -->
+<section class="sec" id="moments" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
+  <div style="display: flex; flex-direction: column; gap: 24px; max-width: 640px; margin-bottom: 56px;">
+    <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">The days you lived, kept.</h2>
+    <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Each evening becomes a quiet line in your timeline — what you lived, what you learned. Months later, one comes back as an Echo, a reminder of what you've cared about all along.</p>
+    <a href="#signup" data-app="signup" style="align-self: flex-start; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; min-height: 44px;">Try it free for 14 days
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </div>
+  <div class="win">
+    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+    <img class="win-media" src="media/moments.jpg" width="1600" height="1131" loading="lazy" alt="Moments: a timeline of days, each with one line about what happened and the intention behind it.">
+  </div>
+  <p class="win-cap">Moments: every evening becomes one line.</p>
+</section>
+
 <!-- ============ STORY ============ -->
 <section id="story" style="background: #F1ECE6;">
   <div class="pad" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px;">
@@ -175,203 +347,14 @@ section{padding-left:20px !important;padding-right:20px !important}
   </div>
 </section>
 
-<!-- ============ A DAY ============ -->
-<section class="sec" id="today" style="max-width: 1200px; margin: 0 auto; padding: 112px 32px 96px;">
-  <div style="max-width: 680px; margin: 0 auto 72px; text-align: center;">
-    <h2 style="margin: 0 0 18px; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">One day. Three small moments.</h2>
-    <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #6B6560;">A light rhythm, when you want it. Skip a moment, or a whole day — nothing breaks.</p>
-  </div>
-  <div style="position: relative;">
-    <div class="hide-m" style="position: absolute; left: 16.6%; right: 16.6%; top: 27px; height: 2px; background: #F2C9B5;"></div>
-    <div class="g3" style="position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
-      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
-        <span style="width: 56px; height: 56px; border-radius: 99px; background: #FFFFFF; border: 1px solid #E7E1DA; color: #E85D20; display: inline-flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v2M5.6 5.6 7 7M3 12h2M19 12h2M17 7l1.4-1.4M7 17a5 5 0 0 1 10 0M3 20h18"></path></svg></span>
-        <div style="font-size: 13px; font-weight: 700; color: #6B6560;">Morning</div>
-        <div style="font-size: 24px; font-weight: 700;">Start with intention</div>
-        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #372C22; max-width: 300px;">One line for how you want today to feel. Not a goal to hit — a direction to lean into.</p>
-      </div>
-      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
-        <span style="width: 56px; height: 56px; border-radius: 99px; background: #E85D20; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px #F7DED1;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span>
-        <div style="font-size: 13px; font-weight: 700; color: #6B6560;">During the day</div>
-        <div style="font-size: 24px; font-weight: 700;">Take small steps</div>
-        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #372C22; max-width: 300px;">A few small steps toward what matters to you. Finished ones fold away so the day stays light.</p>
-      </div>
-      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
-        <span style="width: 56px; height: 56px; border-radius: 99px; background: #FFFFFF; border: 1px solid #E7E1DA; color: #E85D20; display: inline-flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></span>
-        <div style="font-size: 13px; font-weight: 700; color: #6B6560;">Evening</div>
-        <div style="font-size: 24px; font-weight: 700;">Look back</div>
-        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #372C22; max-width: 300px;">A short reflection: what you experienced, what you learned, what made the day yours. A few minutes, then let it go.</p>
-      </div>
+<!-- ============ MOBILE (coming soon) ============ -->
+<section id="mobile" class="sec" style="max-width: 1200px; margin: 0 auto; padding: 72px 32px 24px;">
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; background: #FFFFFF; border: 1px solid #E7E1DA; border-radius: 24px; padding: 32px 36px;">
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <span style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #F7DED1; color: #E85D20; display: inline-flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></span>
+      <div><div style="font-size: 20px; font-weight: 700;">On your phone</div><div style="font-size: 16px; color: #6B6560; margin-top: 4px;">Motivian already works in your phone's browser. Apps for iPhone and Android are coming soon.</div></div>
     </div>
-  </div>
-  <div style="margin: 56px auto 0; max-width: 760px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 40px; padding: 24px 28px; border-top: 1px solid #E7E1DA; border-bottom: 1px solid #E7E1DA; text-align: center;">
-    <span style="font-size: 17px; color: #6B6560;">Your calendar knows <strong style="color: #1A1614;">when</strong>.</span>
-    <span style="font-size: 17px; color: #6B6560;">Motivian holds <strong style="color: #E85D20;">why</strong>.</span>
-  </div>
-  <div style="margin-top: 72px;">
-  <div class="win">
-    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
-    <img class="win-media" src="media/week.jpg" width="1600" height="1131" loading="lazy" alt="Week view: steps planned across the days, with a summary of where the week went.">
-  </div>
-  <p class="win-cap">Week: drag steps into the days, then see where your week went.</p>
-  </div>
-</section>
-
-<!-- ============ LIFE MAP ============ -->
-<section class="sec" id="map" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
-  <div class="g2" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 72px; align-items: end; margin-bottom: 56px;">
-    <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Put what matters<br>into words.</h2>
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-      <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Name the parts of your life you care about, in your own words. Not a plan to follow — just something to come back to when you're wondering what today is for.</p>
-      <div style="display: flex; gap: 16px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E7E1DA; border-radius: 18px; padding: 18px 20px;">
-        <span style="flex: none; width: 40px; height: 40px; border-radius: 12px; background: #E3EDE9; color: #2F6B5C; display: inline-flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg></span>
-        <div><div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Ideas — no pressure</div><div style="font-size: 15px; line-height: 1.55; color: #6B6560;">Park small things you <em>could</em> do next to the Area or Path they belong to. Add one to today when there's room.</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="win">
-    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
-    <video class="win-media" data-autoplay muted loop playsinline preload="none" width="1600" height="1131" poster="media/lifemap-poster.jpg" aria-label="Life Map: areas like Family, Work and Climbing around Me. Opening an area shows what is on your mind, its paths and ideas.">
-      <source src="media/lifemap.webm" type="video/webm">
-      <source src="media/lifemap.mp4" type="video/mp4">
-    </video>
-  </div>
-  <p class="win-cap">Life Map, and two of its areas: Work and Family.</p>
-</section>
-
-<!-- ============ MOMENTS ============ -->
-<section class="sec" id="moments" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
-  <div style="display: flex; flex-direction: column; gap: 24px; max-width: 640px; margin-bottom: 56px;">
-    <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">The days you lived, kept.</h2>
-    <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Each evening becomes a quiet line in your timeline — what you lived, what you learned. Months later, one comes back as an Echo, a reminder of what you've cared about all along.</p>
-    <a href="#signup" data-app="signup" style="align-self: flex-start; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; min-height: 44px;">Try it free for 14 days
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-    </a>
-  </div>
-  <div class="win">
-    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
-    <img class="win-media" src="media/moments.jpg" width="1600" height="1131" loading="lazy" alt="Moments: a timeline of days, each with one line about what happened and the intention behind it.">
-  </div>
-  <p class="win-cap">Moments: every evening becomes one line.</p>
-</section>
-
-<!-- ============ MOBILE ============ -->
-<section id="mobile" class="sec" style="padding: 120px 0 120px; overflow: hidden;">
-  <div style="max-width: 760px; margin: 0 auto 56px; padding: 0 32px; text-align: center;">
-    <h2 style="margin: 0 0 18px; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Everything,<br>in your pocket.</h2>
-    <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6B6560;">Motivian runs in your browser, on your laptop and on your phone. Set an intention over breakfast, tick off a step on the way, and look back before bed. A native app is on the way.</p>
-  </div>
-  <div class="phones" style="display: flex; justify-content: center; align-items: flex-start; gap: 28px; padding: 0 32px 40px;">
-      <div class="phone" role="img" aria-label="Motivian on a phone: Today, with intention and to-dos" style="flex: none; width: 248px; transform: translateY(24px); scroll-snap-align: center;">
-        <div style="background: #1A1614; border-radius: 42px; padding: 8px; box-shadow: 0 40px 70px -40px rgba(60,30,10,0.55);">
-          <div style="position: relative; height: 510px; border-radius: 34px; background: #FBF2E6; overflow: hidden; color: #372C22; font-size: 11px;">
-            <div style="position: absolute; left: 50%; top: 8px; transform: translateX(-50%); width: 72px; height: 20px; border-radius: 99px; background: #1A1614;"></div>
-            <div style="padding: 40px 14px 0;">
-              <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 19px; font-weight: 800; color: #E85D20; letter-spacing: -0.02em;">Motivian</span><span style="width: 26px; height: 26px; border-radius: 99px; background: #E85D20; color: #FFFFFF; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;">A</span></div>
-              <div style="position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 12px 0 10px; text-align: center;">
-                <div style="position: absolute; left: 16.6%; right: 50%; top: 4px; height: 1.5px; background: #F2C9B5;"></div>
-                <div style="position: absolute; left: 50%; right: 16.6%; top: 4px; border-top: 1.5px dashed #F2C9B5;"></div>
-                <div style="position: relative;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 99px; background: #F0B79A;"></span><div style="font-size: 10.5px; font-weight: 600;">Echoes</div></div>
-                <div style="position: relative;"><span style="display: inline-block; width: 11px; height: 11px; border-radius: 99px; background: #E85D20; box-shadow: 0 0 0 3px #F7DED1; margin-top: -1.5px;"></span><div style="font-size: 11.5px; font-weight: 800; color: #E85D20;">Today</div><div style="font-size: 8px; color: #756454;">Mon, Oct 12</div></div>
-                <div style="position: relative;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 99px; border: 1.5px solid #F0B79A; background: #FBF2E6; box-sizing: border-box;"></span><div style="font-size: 10.5px; font-weight: 600;">Vision</div></div>
-              </div>
-              <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 8px; font-weight: 800; letter-spacing: 0.12em; color: #E85D20; background: #F9E1D2; padding: 3px 8px; border-radius: 99px;"><span style="width: 4px; height: 4px; border-radius: 99px; background: #E85D20;"></span>MORNING · INTENTION</span>
-              <div style="margin: 6px 0 10px; background: #FFFFFF; border-radius: 14px; padding: 10px 12px; display: flex; align-items: center; gap: 9px; font-size: 12.5px; font-weight: 600;"><span style="flex: none; width: 13px; height: 13px; border-radius: 99px; border: 1.5px solid #D6B89F;"></span>Slow &amp; focused</div>
-              <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 8px; font-weight: 800; letter-spacing: 0.12em; color: #E85D20; background: #F9E1D2; padding: 3px 8px; border-radius: 99px;"><span style="width: 4px; height: 4px; border-radius: 99px; background: #E85D20;"></span>TODOS</span>
-              <div style="display: flex; align-items: center; gap: 8px; margin: 8px 0;"><div style="flex: 1; height: 4px; background: #EFE3D7; border-radius: 99px;"><div style="width: 40%; height: 100%; background: #E85D20; border-radius: 99px;"></div></div><span style="font-size: 8.5px; color: #9B8876; font-weight: 700;">2/5</span></div>
-              <div style="background: #FFFFFF; border-radius: 14px; overflow: hidden;">
-                <div style="display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-bottom: 1px solid #F5EBDF; font-size: 11.5px;"><span style="flex: none; width: 13px; height: 13px; border-radius: 99px; border: 1.5px solid #D6B89F;"></span>Finish the project proposal</div><div style="display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-bottom: 1px solid #F5EBDF; font-size: 11.5px;"><span style="flex: none; width: 13px; height: 13px; border-radius: 99px; border: 1.5px solid #D6B89F;"></span>Call grandma</div><div style="display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-bottom: 1px solid #F5EBDF; font-size: 11.5px;"><span style="flex: none; width: 13px; height: 13px; border-radius: 99px; border: 1.5px solid #D6B89F;"></span>Long walk after lunch</div><div style="display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-bottom: 1px solid #F5EBDF; font-size: 11.5px;"><span style="flex: none; width: 13px; height: 13px; border-radius: 99px; border: 1.5px solid #D6B89F;"></span>Read one chapter</div>
-                <div style="padding: 8px 12px; font-size: 11px; color: #C4AE9C;">+ Add a todo…</div>
-              </div>
-            </div>
-            <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 50px; padding-bottom: 6px; background: #FFFFFF; border-top: 1px solid #F0E3D2; display: flex; align-items: center;"><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"></path></svg><span style="font-size: 8.5px; font-weight: 700; color: #E85D20;">Home</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Life Map</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h2M4 12h2M4 18h2M10 6h10M10 12h10M10 18h10"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Week</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Moments</span></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="phone" role="img" aria-label="Motivian on a phone: the Life Map with ideas" style="flex: none; width: 248px; transform: translateY(0px); scroll-snap-align: center;">
-        <div style="background: #1A1614; border-radius: 42px; padding: 8px; box-shadow: 0 40px 70px -40px rgba(60,30,10,0.55);">
-          <div style="position: relative; height: 510px; border-radius: 34px; background: #FBF2E6; overflow: hidden; color: #372C22; font-size: 11px;">
-            <div style="position: absolute; left: 50%; top: 8px; transform: translateX(-50%); width: 72px; height: 20px; border-radius: 99px; background: #1A1614;"></div>
-            <div style="padding: 40px 14px 0;">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start;"><div><div style="font-size: 8.5px; color: #B9805E;">What matters, and where you're heading.</div><div style="font-size: 18px; font-weight: 800; letter-spacing: -0.02em; margin-top: 2px;">My Life Map</div></div><span style="width: 26px; height: 26px; border-radius: 99px; background: #E85D20; color: #FFFFFF; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;">A</span></div>
-              <div style="margin: 10px 0; background: #FFFFFF; border: 1px solid #F0E3D2; border-radius: 14px; padding: 9px 11px; display: flex; align-items: center; gap: 10px;"><span style="flex: none; width: 30px; height: 30px; border-radius: 55% 45% 50% 50% / 50% 55% 45% 50%; border: 2px solid #E85D20; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800;">Me</span><div><div style="font-size: 7.5px; font-weight: 800; letter-spacing: 0.12em; color: #8A6A52;">THIS WEEK</div><div style="font-size: 11.5px; font-weight: 800;">A slow, steady week</div></div></div>
-              <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px;">
-                <div style="grid-column: span 2; height: 58px; border-radius: 12px; background: #F7E2D6; border: 1px solid #EBC3A9; padding: 7px 9px; display: flex; flex-direction: column; justify-content: space-between;"><div style="display: flex; justify-content: space-between; align-items: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A34B24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"></path></svg><span style="font-size: 7.5px; font-weight: 800; color: #FFFFFF; background: #A34B24; padding: 1px 6px; border-radius: 99px;">2 ideas</span></div><div><div style="font-size: 11px; font-weight: 800;">Craft</div><div style="font-size: 8px; color: #A34B24;">Build things that last</div></div></div>
-                <div style="height: 58px; border-radius: 12px; background: #F0E8EF; border: 1px solid #D9C7D6; padding: 7px 9px; display: flex; flex-direction: column; justify-content: space-between;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7E4D72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15.5 8.5-2 5-5 2 2-5z"></path></svg><div style="font-size: 11px; font-weight: 800;">Travel</div></div>
-                <div style="height: 58px; border-radius: 12px; background: #F0E8EF; border: 1px solid #D9C7D6; padding: 7px 9px; display: flex; flex-direction: column; justify-content: space-between;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7E4D72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3.5 3.5 0 0 1 0 7M18 14.2c1.8.8 3 2.7 3 5.8"></path></svg><div style="font-size: 11px; font-weight: 800;">Family</div></div>
-                <div style="height: 58px; border-radius: 12px; background: #E3EDE9; border: 1px solid #BCD3CA; padding: 7px 9px; display: flex; flex-direction: column; justify-content: space-between;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2F6B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"></path></svg><div style="font-size: 11px; font-weight: 800;">Health</div></div>
-                <div style="height: 58px; border-radius: 12px; background: #E3EDE9; border: 1px solid #BCD3CA; padding: 7px 9px; display: flex; flex-direction: column; justify-content: space-between;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2F6B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"></path></svg><div style="font-size: 11px; font-weight: 800;">Home</div></div>
-                <div style="grid-column: span 3; height: 34px; border-radius: 12px; border: 1.5px dashed #E4C7B0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #8A6A52;">+ Add area</div>
-              </div>
-              <div style="margin-top: 10px; background: #FFFFFF; border: 1px solid #F0E3D2; border-radius: 14px; padding: 10px 11px;">
-                <div style="display: flex; justify-content: space-between; align-items: center;"><div style="display: flex; background: #FBEBDD; border-radius: 9px; padding: 2px; font-size: 9px; font-weight: 700;"><span style="background: #FFFFFF; border-radius: 7px; padding: 3px 9px;">Ideas</span><span style="padding: 3px 9px; color: #B9805E;">Steps</span></div><span style="font-size: 8.5px; font-weight: 700; color: #B9805E;">12 ideas</span></div>
-                <div style="font-size: 9px; color: #756454; margin: 7px 0 6px;">Small things you could do — no pressure.</div>
-                <div style="font-size: 10.5px; font-weight: 800; display: flex; align-items: center; gap: 5px;"><span style="width: 6px; height: 6px; border-radius: 99px; background: #7E4D72;"></span>Travel <span style="font-weight: 700; color: #9B8876;">2</span></div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0 0 11px; font-size: 10.5px;"><span>Plan a weekend in Lisbon</span><span style="font-size: 8.5px; font-weight: 700; border: 1px solid #EDDDC7; border-radius: 99px; padding: 2px 7px;">+ Todo</span></div>
-              </div>
-            </div>
-            <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 50px; padding-bottom: 6px; background: #FFFFFF; border-top: 1px solid #F0E3D2; display: flex; align-items: center;"><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Home</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"></path></svg><span style="font-size: 8.5px; font-weight: 700; color: #E85D20;">Life Map</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h2M4 12h2M4 18h2M10 6h10M10 12h10M10 18h10"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Week</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Moments</span></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="phone" role="img" aria-label="Motivian on a phone: the week with to-dos" style="flex: none; width: 248px; transform: translateY(0px); scroll-snap-align: center;">
-        <div style="background: #1A1614; border-radius: 42px; padding: 8px; box-shadow: 0 40px 70px -40px rgba(60,30,10,0.55);">
-          <div style="position: relative; height: 510px; border-radius: 34px; background: #FBF2E6; overflow: hidden; color: #372C22; font-size: 11px;">
-            <div style="position: absolute; left: 50%; top: 8px; transform: translateX(-50%); width: 72px; height: 20px; border-radius: 99px; background: #1A1614;"></div>
-            <div style="padding: 40px 14px 0;">
-              <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 18px; font-weight: 800; letter-spacing: -0.02em;">Week</span><span style="width: 26px; height: 26px; border-radius: 99px; background: #E85D20; color: #FFFFFF; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;">A</span></div>
-              <div style="margin: 10px 0 8px; background: #FFFFFF; border-radius: 99px; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center;"><span style="color: #9B8876;">‹</span><div style="text-align: center;"><div style="font-size: 8px; font-weight: 700; color: #E85D20;">This week</div><div style="font-size: 10.5px; font-weight: 700;">Oct 12 – 18, 2026</div></div><span style="color: #9B8876;">›</span></div>
-              <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; font-size: 8px; color: #B9805E; padding-bottom: 8px; border-bottom: 1px solid #F0E3D2;">
-                <div>Mon<div style="font-size: 11px; color: #372C22; margin: 3px 0;">12</div><span style="color: #E85D20;">✓</span></div>
-                <div>Tue<div style="font-size: 11px; color: #372C22; margin: 3px 0;">13</div><span style="color: #E85D20;">✓</span></div>
-                <div>Wed<div style="width: 20px; height: 20px; margin: 1px auto; border-radius: 99px; background: #E85D20; color: #FFFFFF; font-size: 11px; display: flex; align-items: center; justify-content: center;">14</div></div>
-                <div>Thu<div style="font-size: 11px; color: #372C22; margin: 3px 0;">15</div></div>
-                <div>Fri<div style="font-size: 11px; color: #372C22; margin: 3px 0;">16</div></div>
-                <div>Sat<div style="font-size: 11px; color: #372C22; margin: 3px 0;">17</div></div>
-                <div>Sun<div style="font-size: 11px; color: #372C22; margin: 3px 0;">18</div></div>
-              </div>
-              <div style="display: flex; align-items: center; gap: 6px; margin: 10px 0 6px;"><span style="font-size: 13px; font-weight: 800;">Wed Oct 14</span><span style="font-size: 8px; font-weight: 700; color: #E85D20; background: #F9E1D2; padding: 2px 7px; border-radius: 99px;">Today</span></div>
-              <div style="background: #FFFFFF; border-radius: 14px; overflow: hidden;">
-                <div style="display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-bottom: 1px solid #F5EBDF; font-size: 11px;"><span style="flex: none; width: 13px; height: 13px; border-radius: 99px; border: 1.5px solid #D6B89F;"></span><div>Call grandma<div style="font-size: 8px; color: #7E4D72;">● Family</div></div></div>
-                <div style="display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-bottom: 1px solid #F5EBDF; font-size: 11px;"><span style="flex: none; width: 13px; height: 13px; border-radius: 99px; border: 1.5px solid #D6B89F;"></span>Long walk after lunch</div>
-                <div style="display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-bottom: 1px solid #F5EBDF; font-size: 11px;"><span style="flex: none; width: 13px; height: 13px; border-radius: 99px; border: 1.5px solid #D6B89F;"></span>Read one chapter</div>
-                <div style="padding: 7px 12px; font-size: 10.5px; color: #C4AE9C;">+ Add a step</div>
-              </div>
-              <div style="display: flex; align-items: center; gap: 6px; margin: 12px 0 6px;"><span style="font-size: 12.5px; font-weight: 800;">To Plan</span><span style="font-size: 8.5px; font-weight: 700; background: #F5E6DA; padding: 1px 7px; border-radius: 99px;">24</span></div>
-              <div style="display: flex; gap: 5px; margin-bottom: 7px; font-size: 8.5px; font-weight: 700;"><span style="background: #E85D20; color: #FFFFFF; padding: 3px 8px; border-radius: 99px;">All areas</span><span style="background: #F5E6DA; padding: 3px 8px; border-radius: 99px;">Travel</span><span style="background: #F5E6DA; padding: 3px 8px; border-radius: 99px;">Family</span></div>
-              <div style="background: #FFFFFF; border-radius: 14px; padding: 8px 12px; display: flex; align-items: center; gap: 9px; font-size: 11px;"><span style="flex: none; width: 13px; height: 13px; border-radius: 99px; border: 1.5px solid #D6B89F;"></span><div>Renew passport<div style="font-size: 8px; color: #7E4D72;">● Travel</div></div></div>
-            </div>
-            <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 50px; padding-bottom: 6px; background: #FFFFFF; border-top: 1px solid #F0E3D2; display: flex; align-items: center;"><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Home</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Life Map</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h2M4 12h2M4 18h2M10 6h10M10 12h10M10 18h10"></path></svg><span style="font-size: 8.5px; font-weight: 700; color: #E85D20;">Week</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Moments</span></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="phone" role="img" aria-label="Motivian on a phone: Moments, a timeline of remembered days" style="flex: none; width: 248px; transform: translateY(24px); scroll-snap-align: center;">
-        <div style="background: #1A1614; border-radius: 42px; padding: 8px; box-shadow: 0 40px 70px -40px rgba(60,30,10,0.55);">
-          <div style="position: relative; height: 510px; border-radius: 34px; background: #FBF2E6; overflow: hidden; color: #372C22; font-size: 11px;">
-            <div style="position: absolute; left: 50%; top: 8px; transform: translateX(-50%); width: 72px; height: 20px; border-radius: 99px; background: #1A1614;"></div>
-            <div style="padding: 40px 14px 0;">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start;"><div><div style="font-size: 18px; font-weight: 800; letter-spacing: -0.02em;">Moments</div><div style="font-size: 9px; color: #756454;">12 days remembered</div></div><div style="display: flex; background: #FBEBDD; border-radius: 99px; padding: 2px; font-size: 8.5px; font-weight: 700;"><span style="background: #FFFFFF; border-radius: 99px; padding: 3px 9px;">Month</span><span style="padding: 3px 9px; color: #B9805E;">Year</span></div></div>
-              <div style="display: flex; justify-content: center; gap: 22px; align-items: center; margin: 10px 0 12px; font-size: 11.5px; font-weight: 800;"><span style="color: #9B8876;">←</span>October 2026<span style="color: #9B8876;">→</span></div>
-              <div style="position: relative; display: grid; grid-template-columns: 36px 1fr; gap: 0 10px;">
-                <div style="position: absolute; left: 41px; top: 0; bottom: -200px; width: 1px; background: #EBDCCB;"></div>
-                <div style="text-align: right; padding-right: 4px;"><div style="font-size: 7.5px; font-weight: 700; color: #9B8876;">SUN</div><div style="font-size: 16px; font-weight: 500; line-height: 1.1;">11</div></div>
-                <div style="position: relative; padding-left: 8px;"><span style="position: absolute; left: -5px; top: 8px; width: 7px; height: 7px; border-radius: 99px; background: #9A6A4E;"></span>
-                  <div style="background: #FFFFFF; border-radius: 10px; padding: 4px; box-shadow: 0 6px 14px -10px rgba(90,50,20,0.4);"><div style="height: 104px; border-radius: 7px; background: linear-gradient(180deg, #F6D6B8 0%, #EBB896 40%, #8DB4B8 41%, #5E8F98 100%); position: relative; overflow: hidden;"><svg viewBox="0 0 160 104" width="100%" height="100%" preserveAspectRatio="none" style="position: absolute; inset: 0;" aria-hidden="true"><circle cx="112" cy="26" r="9" fill="#FBE6CF"></circle><path d="M0 42 L32 22 L54 32 L80 14 L112 36 L140 24 L160 34 L160 43 L0 43 Z" fill="#B9897A" opacity="0.7"></path></svg></div></div>
-                  <div style="font-size: 14px; font-weight: 600; margin: 8px 0 3px;">Lake day</div>
-                  <div style="font-size: 9.5px; line-height: 1.55; color: #8A7666;">Swam until the sun went down. Days like this don't need a plan.</div>
-                  <div style="font-size: 8px; color: #B9805E; margin: 4px 0 14px;">Intention: Slow down · all done</div>
-                </div>
-                <div style="text-align: right; padding-right: 4px;"><div style="font-size: 7.5px; font-weight: 700; color: #9B8876;">SAT</div><div style="font-size: 16px; font-weight: 500; line-height: 1.1;">10</div></div>
-                <div style="position: relative; padding-left: 8px;"><span style="position: absolute; left: -5px; top: 8px; width: 7px; height: 7px; border-radius: 99px; background: #C9A288;"></span>
-                  <div style="font-size: 10.5px; line-height: 1.6;">Long walk with an old friend. Three hours of talking, and I didn't check my phone once.</div>
-                  <div style="font-size: 8px; color: #B9805E; margin-top: 4px;">Intention: Be present · all done</div>
-                </div>
-              </div>
-            </div>
-            <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 50px; padding-bottom: 6px; background: #FFFFFF; border-top: 1px solid #F0E3D2; display: flex; align-items: center;"><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Home</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Life Map</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#756454" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h2M4 12h2M4 18h2M10 6h10M10 12h10M10 18h10"></path></svg><span style="font-size: 8.5px; font-weight: 500; color: #756454;">Week</span></div><div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E85D20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"></path></svg><span style="font-size: 8.5px; font-weight: 700; color: #E85D20;">Moments</span></div></div>
-          </div>
-        </div>
-      </div>
+    <span style="font-size: 14px; font-weight: 700; color: #E85D20; background: #FDF0E8; border-radius: 999px; padding: 8px 16px;">Coming soon</span>
   </div>
 </section>
 
@@ -602,6 +585,64 @@ if (document.fonts) document.fonts.ready.then(placeTimeline);
       else v.pause();
     }), { threshold: 0.35 });
     vids.forEach((v) => io.observe(v));
+  }
+}
+</script>
+<script>
+// Day section: blend the sky from dawn to night as the phases pass the middle of the screen.
+{
+  const day = document.getElementById('day');
+  const stops = [...day.querySelectorAll('.day-intro, .phase, .day-outro')];
+  const K = [ // bg, sun x/y/opacity, moon x/y/opacity, stars
+    { bg: [36, 28, 38],    sx: 18, sy: 104, so: 0, mx: 34, my: 112, mo: 0, st: .7 },
+    { bg: [251, 227, 208], sx: 24, sy: 64,  so: 1, mx: 34, my: 112, mo: 0, st: 0 },
+    { bg: [255, 246, 234], sx: 58, sy: 16,  so: 1, mx: 34, my: 112, mo: 0, st: 0 },
+    { bg: [24, 20, 32],    sx: 94, sy: 110, so: 0, mx: 44, my: 16,  mo: 1, st: 1, dusk: [205, 118, 92] },
+    { bg: [24, 20, 32],    sx: 94, sy: 110, so: 0, mx: 48, my: 12,  mo: 1, st: 1 },
+  ];
+  const mix = (a, b, t) => a + (b - a) * t;
+  let raf = 0;
+  function paint() {
+    raf = 0;
+    const mid = innerHeight / 2;
+    const c = stops.map((el) => { const r = el.getBoundingClientRect(); return r.top + r.height / 2; });
+    let i = 0, t = 0;
+    if (mid <= c[0]) { i = 0; t = 0; }
+    else if (mid >= c[c.length - 1]) { i = c.length - 2; t = 1; }
+    else { while (i < c.length - 2 && mid > c[i + 1]) i++; t = (mid - c[i]) / (c[i + 1] - c[i]); }
+    t = t * t * (3 - 2 * t);
+    const a = K[i], b = K[i + 1];
+    const bg = b.dusk // evening passes through a warm dusk on its way to night
+      ? (t < .5 ? a.bg.map((v, k) => mix(v, b.dusk[k], t * 2)) : b.dusk.map((v, k) => mix(v, b.bg[k], t * 2 - 1)))
+      : a.bg.map((v, k) => mix(v, b.bg[k], t));
+    day.style.backgroundColor = `rgb(${bg.map(Math.round).join(',')})`;
+    for (const k of ['sx', 'sy', 'mx', 'my']) day.style.setProperty('--' + k, mix(a[k], b[k], t) + '%');
+    day.style.setProperty('--so', mix(a.so, b.so, t)); day.style.setProperty('--mo', mix(a.mo, b.mo, t)); day.style.setProperty('--stars', mix(a.st, b.st, t));
+  }
+  day.classList.add('live');
+  const req = () => { if (!raf) raf = requestAnimationFrame(paint); };
+  addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); paint();
+}
+// Home: Echoes / Today / Vision, one at a time.
+{
+  const fig = document.getElementById('homefig');
+  const cols = [...fig.querySelectorAll('.hf-col')], keys = [...document.querySelectorAll('.hf-key')];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let cur = -1, timer = 0, user = false;
+  function show(i) {
+    cur = i; fig.classList.toggle('focus', i >= 0);
+    cols.forEach((c, k) => c.classList.toggle('on', k === i)); keys.forEach((c, k) => { c.classList.toggle('on', k === i); c.setAttribute('aria-pressed', k === i); });
+  }
+  keys.forEach((k, i) => {
+    k.addEventListener('mouseenter', () => { user = true; clearInterval(timer); show(i); });
+    k.addEventListener('focus', () => { user = true; clearInterval(timer); show(i); });
+    k.addEventListener('click', () => { user = true; clearInterval(timer); show(cur === i ? -1 : i); });
+  });
+  if (!reduce && 'IntersectionObserver' in window) {
+    new IntersectionObserver((es) => es.forEach((e) => {
+      clearInterval(timer);
+      if (e.isIntersecting && !user) { show(cur < 0 ? 0 : cur); timer = setInterval(() => show((cur + 1) % 3), 3200); }
+    }), { threshold: 0.4 }).observe(fig);
   }
 }
 </script>
