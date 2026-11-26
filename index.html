@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Motivian — A place for what matters.</title>
-<meta name="description" content="One intention in the morning, a few small steps during the day, a short look back at night. A quiet place to keep what matters close — with no streaks to keep up.">
+<meta name="description" content="Keep what matters to you in sight, make a little room for it today, and remember the days you&#39;ve lived. A quiet place for your life — with no streaks to keep up.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://naoto31.github.io/motivian-landing/">
 <meta property="og:title" content="Motivian — A place for what matters.">
@@ -12,7 +12,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:description" content="One intention in the morning, a few small steps during the day, a short look back at night. A quiet place to keep what matters close — with no streaks to keep up.">
+<meta property="og:description" content="Keep what matters to you in sight, make a little room for it today, and remember the days you&#39;ve lived. A quiet place for your life — with no streaks to keep up.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E85D20'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='20' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -113,6 +113,21 @@ section{padding-left:20px !important;padding-right:20px !important}
 #home .split{grid-template-columns:minmax(0,1fr) minmax(0,.62fr)}
 #home .hf-keys{grid-template-columns:1fr;margin-top:0;gap:12px}
 @media (max-width:900px){.split,.split.rev,#home .split{grid-template-columns:1fr}.split.rev .win{order:2}}
+/* Flow as three cards in a row */
+#flow .fl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;flex-direction:unset}
+#flow .fl-row{display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:22px}
+#flow .fl-title{font-size:22px}#flow .fl-p{font-size:16px}
+#flow .fl-shot{align-self:stretch;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:14px}
+.fl-img{position:relative;width:100%}.fl-img img{border-radius:10px}
+@media (max-width:900px){#flow .fl{grid-template-columns:1fr;gap:48px}}
+/* Time */
+.tm{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tm-card{background:#FFFFFF;border:1px solid #E7E1DA;border-radius:22px;padding:24px}
+.tm-grid{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:4px;margin-bottom:22px}
+.tm-grid i{display:block;aspect-ratio:1;border-radius:3px;background:#F1ECE6}
+.tm-when{font-size:14px;font-weight:700;color:#C2491A;margin-bottom:6px}
+.tm-what{font-size:21px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+@media (max-width:900px){.tm{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -123,8 +138,7 @@ section{padding-left:20px !important;padding-right:20px !important}
   <nav class="nav" style="max-width: 1200px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <a href="#top" style="font-size: 26px; font-weight: 800; letter-spacing: -0.02em; color: #E85D20;">Motivian</a>
     <div class="hide-t" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap; font-size: 15px; font-weight: 500;">
-      <a href="#day" style="color: #372C22;">How it works</a>
-      <a href="#home" style="color: #372C22;">Home</a>
+      <a href="#home" style="color: #372C22;">How it works</a>
       <a href="#map" style="color: #372C22;">Life Map</a>
       <a href="#moments" style="color: #372C22;">Moments</a>
       <a href="#pricing" style="color: #372C22;">Pricing</a>
@@ -141,11 +155,11 @@ section{padding-left:20px !important;padding-right:20px !important}
 <section id="top" class="sec hero" style="max-width: 1200px; margin: 0 auto; padding: 96px 32px 64px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: end; gap: 32px 64px;">
   <h1 style="margin: 0; font-size: 96px; line-height: 1.06; font-weight: 700; letter-spacing: -0.035em;">A place for<br><span style="white-space: nowrap;">what matters</span><span style="color: #E85D20;">.</span></h1>
   <div style="display: flex; flex-direction: column; gap: 28px; padding-bottom: 8px;">
-  <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #6B6560; max-width: 440px;">One intention in the morning. A few small steps during the day. A short look back at night. <span style="color: #1A1614; font-weight: 600;">And if you skip a day, nothing breaks.</span></p>
+  <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #6B6560; max-width: 440px;">Keep what matters to you in sight. Make a little room for it today. <span style="color: #1A1614; font-weight: 600;">And remember the days you've lived.</span></p>
   <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       <a class="btn-primary" href="#signup" data-app="signup" style="min-height: 54px; padding: 0 28px; display: inline-flex; align-items: center; font-size: 16px; font-weight: 700; color: #FFFFFF; background: #E85D20; border-radius: 999px;">Start your 14-day free trial</a>
-      <a class="btn-ghost" href="#day" style="min-height: 54px; padding: 0 24px; display: inline-flex; align-items: center; font-size: 16px; font-weight: 600; color: #1A1614; border: 1px solid #D9D1C8; border-radius: 999px;">See how it works</a>
+      <a class="btn-ghost" href="#home" style="min-height: 54px; padding: 0 24px; display: inline-flex; align-items: center; font-size: 16px; font-weight: 600; color: #1A1614; border: 1px solid #D9D1C8; border-radius: 999px;">See how it works</a>
     </div>
     <p style="margin: 0; font-size: 14px; color: #6B6560;">No credit card required. Already using Motivian? <a href="#login" data-app="login" style="font-weight: 700;">Log in</a></p>
   </div>
@@ -185,6 +199,30 @@ section{padding-left:20px !important;padding-right:20px !important}
       </div>
     </div>
     <p class="closer" style="margin: 64px 0 0; font-size: 26px; line-height: 1.45; font-weight: 700; max-width: 760px;">Motivian is a space to slow down for a moment, and ask: what actually matters to me today?</p>
+  </div>
+</section>
+
+<!-- ============ HOME: past, today, ahead ============ -->
+<section class="sec" id="home" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px 112px;">
+  <div style="max-width: 760px; margin: 0 0 56px;">
+    <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Behind you, ahead of you,<br>and today in the middle.</h2>
+    <p style="margin: 20px 0 0; font-size: 18px; line-height: 1.65; color: #6B6560; max-width: 600px;">Home puts the moments you've lived and where you're heading on the same screen as today. You see the whole picture — and still only have to think about one day.</p>
+  </div>
+  <div class="split">
+  <div class="win homefig" id="homefig">
+    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
+    <div class="hf-body">
+      <img class="win-media" src="media/home.jpg" width="1600" height="1131" loading="lazy" alt="Motivian Home: Echoes on the left, Today in the middle, Vision on the right.">
+      <span class="hf-col" style="left: 5%; width: 26.4%;" data-i="0"></span>
+      <span class="hf-col" style="left: 32.3%; width: 39.3%;" data-i="1"></span>
+      <span class="hf-col" style="left: 72.6%; width: 26.3%;" data-i="2"></span>
+    </div>
+  </div>
+  <div class="hf-keys" role="list">
+    <button type="button" class="hf-key" data-i="0" role="listitem"><span class="hf-name">Echoes</span><span class="hf-t">Moments you've lived</span><span class="hf-d">Past moments resurface — a birthday, a small win, a slow Sunday — so you remember what you've cared about all along.</span></button>
+    <button type="button" class="hf-key" data-i="1" role="listitem"><span class="hf-name">Today</span><span class="hf-t">What you're doing now</span><span class="hf-d">One intention, a few steps, a short look back tonight. Everything else can wait.</span></button>
+    <button type="button" class="hf-key" data-i="2" role="listitem"><span class="hf-name">Vision</span><span class="hf-t">Where you're heading</span><span class="hf-d">Your areas and current focus stay in view, so you always know why today's steps matter.</span></button>
+  </div>
   </div>
 </section>
 
@@ -234,33 +272,9 @@ section{padding-left:20px !important;padding-right:20px !important}
   </div>
 </section>
 
-<!-- ============ HOME: past, today, ahead ============ -->
-<section class="sec" id="home" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px 112px;">
-  <div style="max-width: 760px; margin: 0 0 56px;">
-    <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Behind you, ahead of you,<br>and today in the middle.</h2>
-    <p style="margin: 20px 0 0; font-size: 18px; line-height: 1.65; color: #6B6560; max-width: 600px;">Home puts the moments you've lived and where you're heading on the same screen as today. You see the whole picture — and still only have to think about one day.</p>
-  </div>
-  <div class="split">
-  <div class="win homefig" id="homefig">
-    <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.motivian.app</span></div>
-    <div class="hf-body">
-      <img class="win-media" src="media/home.jpg" width="1600" height="1131" loading="lazy" alt="Motivian Home: Echoes on the left, Today in the middle, Vision on the right.">
-      <span class="hf-col" style="left: 5%; width: 26.4%;" data-i="0"></span>
-      <span class="hf-col" style="left: 32.3%; width: 39.3%;" data-i="1"></span>
-      <span class="hf-col" style="left: 72.6%; width: 26.3%;" data-i="2"></span>
-    </div>
-  </div>
-  <div class="hf-keys" role="list">
-    <button type="button" class="hf-key" data-i="0" role="listitem"><span class="hf-name">Echoes</span><span class="hf-t">Moments you've lived</span><span class="hf-d">Past moments resurface — a birthday, a small win, a slow Sunday — so you remember what you've cared about all along.</span></button>
-    <button type="button" class="hf-key" data-i="1" role="listitem"><span class="hf-name">Today</span><span class="hf-t">What you're doing now</span><span class="hf-d">One intention, a few steps, a short look back tonight. Everything else can wait.</span></button>
-    <button type="button" class="hf-key" data-i="2" role="listitem"><span class="hf-name">Vision</span><span class="hf-t">Where you're heading</span><span class="hf-d">Your areas and current focus stay in view, so you always know why today's steps matter.</span></button>
-  </div>
-  </div>
-</section>
-
 <!-- ============ FLOW: anywhere -> today ============ -->
 <section id="flow" style="background: #F1ECE6;">
-  <div class="pad" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px;">
+  <div class="pad" style="max-width: 1200px; margin: 0 auto; padding: 112px 32px;">
     <div style="max-width: 760px; margin: 0 0 64px;">
       <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">Put it anywhere.<br>It finds you on the day.</h2>
       <p style="margin: 20px 0 0; font-size: 18px; line-height: 1.65; color: #6B6560; max-width: 600px;">Add a step inside the part of life it belongs to, or drop it onto a day in your week. When that day comes, it's waiting on Home. Nothing to dig up, nothing to forget.</p>
@@ -268,15 +282,15 @@ section{padding-left:20px !important;padding-right:20px !important}
     <ol class="fl">
     <li class="fl-row">
       <div class="fl-txt"><span class="fl-n">1</span><div><div class="fl-label">In an Area</div><div class="fl-title">Where it belongs</div><p class="fl-p">“Bedtime story with Emma” lives under Family, next to everything else on your mind there.</p></div></div>
-      <div class="fl-shot"><img src="media/flow-area.jpg" width="1200" height="676" loading="lazy" alt="The Family area with Bedtime story with Emma marked for today."><span class="fl-ring" style="left: 2%; top: 65.5%; width: 92.5%; height: 8.5%;"></span></div>
+      <div class="fl-shot"><div class="fl-img"><img src="media/flow-area.jpg" width="1200" height="676" loading="lazy" alt="The Family area with Bedtime story with Emma marked for today."><span class="fl-ring" style="left: 2%; top: 65.5%; width: 92.5%; height: 8.5%;"></span></div></div>
     </li>
     <li class="fl-row">
       <div class="fl-txt"><span class="fl-n">2</span><div><div class="fl-label">In your week</div><div class="fl-title">On the day you choose</div><p class="fl-p">Drag it onto Wednesday. Steps you haven't placed yet wait in To Plan.</p></div></div>
-      <div class="fl-shot"><img src="media/flow-week.jpg" width="1000" height="527" loading="lazy" alt="The week view with Bedtime story with Emma on Wednesday."><span class="fl-ring" style="left: 68.8%; top: 34.2%; width: 30%; height: 10.4%;"></span></div>
+      <div class="fl-shot"><div class="fl-img"><img src="media/flow-week.jpg" width="1000" height="527" loading="lazy" alt="The week view with Bedtime story with Emma on Wednesday."><span class="fl-ring" style="left: 68.8%; top: 34.2%; width: 30%; height: 10.4%;"></span></div></div>
     </li>
     <li class="fl-row">
       <div class="fl-txt"><span class="fl-n">3</span><div><div class="fl-label">On Home</div><div class="fl-title">Right there, that morning</div><p class="fl-p">When Wednesday comes, it's one of today's steps — with the rest of your life still in view.</p></div></div>
-      <div class="fl-shot"><img src="media/flow-today.jpg" width="970" height="700" loading="lazy" alt="Home on Wednesday with Bedtime story with Emma among today's steps."><span class="fl-ring" style="left: 2.4%; top: 77.6%; width: 94.8%; height: 9.8%;"></span></div>
+      <div class="fl-shot"><div class="fl-img"><img src="media/flow-today.jpg" width="970" height="700" loading="lazy" alt="Home on Wednesday with Bedtime story with Emma among today's steps."><span class="fl-ring" style="left: 2.4%; top: 77.6%; width: 94.8%; height: 9.8%;"></span></div></div>
     </li>
     </ol>
   </div>
@@ -355,15 +369,30 @@ section{padding-left:20px !important;padding-right:20px !important}
   </div>
 </section>
 
-<!-- ============ MOBILE (coming soon) ============ -->
-<section id="mobile" class="sec" style="max-width: 1200px; margin: 0 auto; padding: 72px 32px 24px;">
-  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; background: #FFFFFF; border: 1px solid #E7E1DA; border-radius: 24px; padding: 32px 36px;">
-    <div style="display: flex; align-items: center; gap: 18px;">
-      <span style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #F7DED1; color: #E85D20; display: inline-flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></span>
-      <div><div style="font-size: 20px; font-weight: 700;">On your phone</div><div style="font-size: 16px; color: #6B6560; margin-top: 4px;">Motivian already works in your phone's browser. Apps for iPhone and Android are coming soon.</div></div>
-    </div>
-    <span style="font-size: 14px; font-weight: 700; color: #E85D20; background: #FDF0E8; border-radius: 999px; padding: 8px 16px;">Coming soon</span>
+<!-- ============ TIME: more yours over the years ============ -->
+<section class="sec" id="time" style="max-width: 1200px; margin: 0 auto; padding: 128px 32px;">
+  <div style="max-width: 760px; margin: 0 0 56px;">
+    <h2 style="margin: 0; font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; text-wrap: balance;">It becomes more yours with time.</h2>
+    <p style="margin: 20px 0 0; font-size: 19px; line-height: 1.6; color: #6B6560;">Not because you do more, but because you've lived more.</p>
   </div>
+  <ol class="tm" role="list">
+    <li class="tm-card">
+      <div class="tm-grid" data-fill="3" aria-hidden="true"></div>
+      <div class="tm-when">At first</div>
+      <div class="tm-what">A little clarity about today.</div>
+    </li>
+    <li class="tm-card">
+      <div class="tm-grid" data-fill="34" aria-hidden="true"></div>
+      <div class="tm-when">Over time</div>
+      <div class="tm-what">A clearer picture of what matters.</div>
+    </li>
+    <li class="tm-card">
+      <div class="tm-grid" data-fill="104" aria-hidden="true"></div>
+      <div class="tm-when">Years later</div>
+      <div class="tm-what">A place filled with your life.</div>
+    </li>
+  </ol>
+  <p style="margin: 28px 0 0; font-size: 14px; color: #8A817A;">Each square is a day you kept.</p>
 </section>
 
 <!-- ============ PRINCIPLES ============ -->
@@ -652,6 +681,18 @@ if (document.fonts) document.fonts.ready.then(placeTimeline);
       if (e.isIntersecting && !user) { show(cur < 0 ? 0 : cur); timer = setInterval(() => show((cur + 1) % 3), 3200); }
     }), { threshold: 0.4 }).observe(fig);
   }
+}
+</script>
+<script>
+// Time: fill each grid with days kept, in the colours of the Areas.
+{
+  const cols = ['#CFE3D6', '#F6CDB5', '#D5E1EE', '#EFD9C4', '#E8C9C0', '#DCE8C8'];
+  let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  document.querySelectorAll('.tm-grid').forEach((g) => {
+    const n = +g.dataset.fill, total = 112, on = new Set();
+    while (on.size < n) on.add(Math.floor(rnd() * total));
+    g.innerHTML = Array.from({ length: total }, (_, i) => on.has(i) ? `<i style="background:${cols[Math.floor(rnd() * cols.length)]}"></i>` : '<i></i>').join('');
+  });
 }
 </script>
 <script src="app-links.js"></script>
